@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+    --font-serif: 'DM Serif Display', Georgia, serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: #111827;
+    background-color: #F7F8FA;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: #C89B3C;
+    color: #0B1726;
+  }
+}
+
+/* Custom Animation Utilities */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 28s linear infinite;
+}
+
+/* Seamless 100% Circular Infinite Loop Keyframes (3x Triplicated Array) */
+@keyframes marqueeUpCircular {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-33.3333%);
+  }
+}
+
+@keyframes marqueeDownCircular {
+  0% {
+    transform: translateY(-33.3333%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.animate-marquee-up-circular {
+  animation: marqueeUpCircular 20s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-down-circular {
+  animation: marqueeDownCircular 20s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-up-circular:hover,
+.animate-marquee-down-circular:hover {
+  animation-play-state: paused;
+}
+
+/* Horizontal Left to Right Infinite Marquee */
+@keyframes marqueeLeftToRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left-to-right {
+  animation: marqueeLeftToRight 25s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left-to-right:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar for Enterprise Dark Aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1726;
+}
+::-webkit-scrollbar-thumb {
+  background: #142A3D;
+  border-radius: 4px;
+  border: 1px solid #1E344D;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C89B3C;
+}
