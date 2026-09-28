@@ -4,19 +4,14 @@ import React, { useState } from 'react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { TechStackMarqueeSection } from '@/components/sections/TechStackMarqueeSection';
-import { TrustIntro } from '@/components/sections/TrustIntro';
-import { About } from '@/components/sections/About';
-import { Contact } from '@/components/sections/Contact';
-import { Footer } from '@/components/layout/Footer';
+import { BehindTheLensSection } from '@/components/sections/BehindTheLensSection';
+import { CtaFaqFooterSection } from '@/components/sections/CtaFaqFooterSection';
 import { Modals } from '@/components/ui/Modals';
 
 export default function HomePage() {
-  // Modal states
-  const [discoverModalOpen, setDiscoverModalOpen] = useState(false);
-
   const scrollToContact = () => {
-    const contactEl = document.getElementById('contact');
-    contactEl?.scrollIntoView({ behavior: 'smooth' });
+    const faqEl = document.querySelector('footer');
+    faqEl?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -33,17 +28,11 @@ export default function HomePage() {
       {/* 3. Tech Stack Infinite Marquee Section (Scrolling Left to Right) */}
       <TechStackMarqueeSection />
 
-      {/* 4. Trust & Intro Metrics Section (WHO WE ARE) */}
-      <TrustIntro />
+      {/* Behind the Lens Section */}
+      <BehindTheLensSection />
 
-      {/* 5. About ANVITECH Section */}
-      <About onDiscoverAnvitech={() => setDiscoverModalOpen(true)} />
-
-      {/* 5. Contact Form Section */}
-      <Contact />
-
-      {/* 6. Premium Dark Footer */}
-      <Footer />
+      {/* 4. CTA + FAQ + Footer Section */}
+      <CtaFaqFooterSection />
 
       {/* Interactive Detail Modals */}
       <Modals
@@ -51,8 +40,8 @@ export default function HomePage() {
         onCloseServiceModal={() => {}}
         activeCaseStudy={null}
         onCloseCaseStudyModal={() => {}}
-        discoverModalOpen={discoverModalOpen}
-        onCloseDiscoverModal={() => setDiscoverModalOpen(false)}
+        discoverModalOpen={false}
+        onCloseDiscoverModal={() => {}}
         careersModalOpen={false}
         onCloseCareersModal={() => {}}
       />
