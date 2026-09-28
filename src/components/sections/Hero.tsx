@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { HeroCardMarquee } from '@/components/ui/HeroCardMarquee';
+import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
 interface HeroProps {
@@ -21,6 +21,9 @@ export const Hero: React.FC<HeroProps> = ({ onExploreSolutions, onTalkToTeam }) 
     const el = document.getElementById(targetId);
     el?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  // Easing curve for luxury portfolio smooth motion
+  const easeCurve = [0.22, 1, 0.36, 1];
 
   return (
     <section
@@ -56,24 +59,37 @@ export const Hero: React.FC<HeroProps> = ({ onExploreSolutions, onTalkToTeam }) 
           {/* Left Column: AI-Powered Text + Capabilities List */}
           <div className="lg:col-span-8 flex flex-col space-y-4 sm:space-y-5">
             
-            {/* AI & Digital Transformation Headline & Copy */}
+            {/* AI & Digital Transformation Animated Headline & Copy */}
             <div className="max-w-2xl space-y-2.5">
-              <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold font-heading text-white tracking-tight leading-snug">
+              <motion.h2
+                initial={{ opacity: 0, y: 28 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.15, ease: easeCurve }}
+                className="text-lg sm:text-2xl lg:text-3xl font-bold font-heading text-white tracking-tight leading-snug"
+              >
                 Empowering businesses with intelligent <span className="text-gold-light">AI solutions</span> that simplify work and accelerate growth.
-              </h2>
+              </motion.h2>
 
-              <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed tracking-wide">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.3, ease: easeCurve }}
+                className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed tracking-wide"
+              >
                 We design and deploy custom artificial intelligence, intelligent RPA automation, and scalable cloud platforms—helping organizations streamline complex operations and make everyday work effortlessly efficient.
-              </p>
+              </motion.p>
             </div>
 
-            {/* Capabilities List */}
+            {/* Animated Capabilities List with Staggered Entrance */}
             <div className="flex flex-col space-y-2.5 sm:space-y-3 pt-1">
-              {capabilities.map((cap) => (
-                <button
+              {capabilities.map((cap, idx) => (
+                <motion.button
                   key={cap.num}
+                  initial={{ opacity: 0, x: -24 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.75, delay: 0.45 + idx * 0.1, ease: easeCurve }}
                   onClick={() => handleCapabilityClick(cap.target)}
-                  className="group flex items-center text-left max-w-md text-xs sm:text-sm font-mono tracking-widest text-slate-300 hover:text-white transition-all duration-300"
+                  className="group flex items-center text-left max-w-md text-xs sm:text-sm font-mono tracking-widest text-slate-300 hover:text-white transition-all duration-300 cursor-pointer"
                 >
                   <span className="text-gold-light font-bold w-9 shrink-0 group-hover:text-gold-DEFAULT">
                     {cap.num}
@@ -86,7 +102,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreSolutions, onTalkToTeam }) 
                   </span>
 
                   <ArrowUpRight className="w-3.5 h-3.5 ml-2 opacity-0 group-hover:opacity-100 text-gold-DEFAULT transition-all stroke-[2.5]" />
-                </button>
+                </motion.button>
               ))}
             </div>
 
@@ -97,24 +113,39 @@ export const Hero: React.FC<HeroProps> = ({ onExploreSolutions, onTalkToTeam }) 
         {/* Bottom Row: ANVITECH Headline + INDIA Pvt. Ltd. (Same Line/Font/Color) Left + Paragraph Right */}
         <div className="shrink-0 grid grid-cols-1 lg:grid-cols-12 gap-4 items-end pt-3 sm:pt-4 pb-2 border-t border-white/[0.08]">
           
-          {/* Bottom Left: ANVITECH (Decreased by 10%) + INDIA Pvt. Ltd. on SAME LINE */}
+          {/* Bottom Left: ANVITECH + INDIA Pvt. Ltd. with Smooth Reveal Animation */}
           <div className="lg:col-span-7 flex flex-col justify-end">
             <h1 className="flex items-baseline flex-wrap gap-x-4 gap-y-1">
-              <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[9rem] font-black tracking-tight leading-none text-white font-heading uppercase select-none drop-shadow-2xl">
+              <motion.span
+                initial={{ opacity: 0, y: 35 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.0, delay: 0.4, ease: easeCurve }}
+                className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[9rem] font-black tracking-tight leading-none text-white font-heading uppercase select-none drop-shadow-2xl inline-block"
+              >
                 Anvitech
-              </span>
-              <span className="text-sm sm:text-lg md:text-xl lg:text-2xl font-black font-heading text-white tracking-widest uppercase select-none opacity-95">
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, x: -16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.85, delay: 0.65, ease: easeCurve }}
+                className="text-sm sm:text-lg md:text-xl lg:text-2xl font-black font-heading text-white tracking-widest uppercase select-none opacity-95 inline-block"
+              >
                 INDIA Pvt. Ltd.
-              </span>
+              </motion.span>
             </h1>
           </div>
 
-          {/* Bottom Right: Paragraph text moved right under scrolling cards */}
-          <div className="lg:col-span-5 flex flex-col justify-end text-left lg:text-right items-start lg:items-end pb-1">
+          {/* Bottom Right: Paragraph text with Smooth Fade-Up */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.75, ease: easeCurve }}
+            className="lg:col-span-5 flex flex-col justify-end text-left lg:text-right items-start lg:items-end pb-1"
+          >
             <p className="text-[11px] sm:text-xs lg:text-sm text-slate-300 font-sans leading-relaxed tracking-wide max-w-lg">
               We craft thoughtful <strong className="text-white font-bold">digital solutions</strong> and enterprise software platforms that help businesses <strong className="text-gold-light font-bold">stand out</strong>, build trust, and grow with <strong className="text-white font-bold">confidence</strong>.
             </p>
-          </div>
+          </motion.div>
 
         </div>
 
