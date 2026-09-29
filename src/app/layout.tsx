@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     shortcut: '/nl.webp',
     apple: '/nl.webp',
   },
+  verification: {
+    google: '9A-Qhj3vyoNEImMogsdWQtMU9GOKTvHGNnblN3M4H6E',
+  },
   robots: {
     index: true,
     follow: true,
@@ -71,6 +74,7 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${inter.variable} ${dmSerifDisplay.variable} scroll-smooth`}
     >
       <head>
+        <meta name="google-site-verification" content="9A-Qhj3vyoNEImMogsdWQtMU9GOKTvHGNnblN3M4H6E" />
         <link rel="icon" href="/nl.webp" type="image/webp" />
         <link rel="shortcut icon" href="/nl.webp" type="image/webp" />
         <link rel="apple-touch-icon" href="/nl.webp" />
