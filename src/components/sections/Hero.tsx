@@ -11,10 +11,10 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onExploreSolutions, onTalkToTeam }) => {
   const capabilities = [
-    { num: '/01', label: 'SOFTWARE DEVELOPMENT', target: 'services' },
-    { num: '/02', label: 'AI & AUTOMATION', target: 'solutions' },
-    { num: '/03', label: 'ERP, CRM & LOGISTICS', target: 'solutions' },
-    { num: '/04', label: 'CLOUD & DEVOPS', target: 'services' },
+    { num: '/01', label: 'SOFTWARE DEVELOPMENT', target: 'contact' },
+    { num: '/02', label: 'AI & AUTOMATION', target: 'contact' },
+    { num: '/03', label: 'ERP, CRM & LOGISTICS', target: 'contact' },
+    { num: '/04', label: 'CLOUD & DEVOPS', target: 'contact' },
   ];
 
   const handleCapabilityClick = (targetId: string) => {
