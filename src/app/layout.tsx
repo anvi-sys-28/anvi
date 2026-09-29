@@ -23,32 +23,60 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'ANVITECH INDIA PRIVATE LIMITED | Technology & Digital Solutions',
+  metadataBase: new URL('https://www.anvitechindia.com'),
+  title: {
+    default: 'ANVITECH INDIA | Best Software Development Company Near Me',
+    template: '%s | ANVITECH INDIA PRIVATE LIMITED',
+  },
   description:
-    'ANVITECH INDIA PRIVATE LIMITED delivers modern technology, software, AI, cloud, cybersecurity and digital transformation solutions for businesses.',
+    'ANVITECH INDIA PRIVATE LIMITED is the premier custom software development, AI solutions, ERP/CRM, and cloud engineering technology partner for enterprises and fast-growing businesses.',
   keywords: [
+    'best software development near me',
+    'software development company near me',
+    'best software company near me',
+    'custom software development company Bengaluru',
+    'AI solutions company near me',
+    'AI agents development company',
+    'top enterprise software developers India',
+    'ERP and CRM software development near me',
+    'cloud DevOps cybersecurity company',
     'ANVITECH',
+    'ANVITECH INDIA',
     'ANVITECH INDIA PRIVATE LIMITED',
-    'Enterprise Software India',
-    'AI Solutions',
-    'Cloud DevOps Consulting',
-    'Cybersecurity',
-    'Digital Transformation',
   ],
   authors: [{ name: 'ANVITECH INDIA PRIVATE LIMITED' }],
+  creator: 'ANVITECH INDIA PRIVATE LIMITED',
+  publisher: 'ANVITECH INDIA PRIVATE LIMITED',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: 'https://www.anvitechindia.com',
+  },
   openGraph: {
-    title: 'ANVITECH INDIA PRIVATE LIMITED | Enterprise Technology & Digital Solutions',
+    title: 'ANVITECH INDIA | Best Software Development Company Near Me',
     description:
-      'Engineered for precision, scalability, trust, and continuous innovation. Custom software, AI, cloud, and digital transformation.',
-    url: 'https://anvitech.in',
+      'Premier custom software development, AI solutions, ERP/CRM systems, cloud DevOps, and cybersecurity technology partner.',
+    url: 'https://www.anvitechindia.com',
     siteName: 'ANVITECH INDIA PRIVATE LIMITED',
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: 'https://www.anvitechindia.com/nl.webp',
+        width: 1200,
+        height: 630,
+        alt: 'ANVITECH INDIA PRIVATE LIMITED Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ANVITECH INDIA PRIVATE LIMITED',
-    description: 'Technology That Moves Businesses Forward.',
+    title: 'ANVITECH INDIA | Best Software Development Company Near Me',
+    description: 'Premier Custom Software Development, AI Solutions & Enterprise Technology Partner.',
+    images: ['https://www.anvitechindia.com/nl.webp'],
   },
   icons: {
     icon: '/nl.webp',
@@ -61,6 +89,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -82,31 +117,84 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        {/* Structured JSON-LD Schema for Enterprise Organization */}
+        {/* Senior Level JSON-LD Schema: LocalBusiness + Organization + SoftwareService */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'ANVITECH INDIA PRIVATE LIMITED',
-              url: 'https://anvitech.in',
-              logo: 'https://anvitech.in/logo.svg',
-              description:
-                'ANVITECH INDIA PRIVATE LIMITED delivers modern technology, software, AI, cloud, cybersecurity and digital transformation solutions.',
-              address: {
-                '@type': 'PostalAddress',
-                addressLocality: 'Bengaluru',
-                addressRegion: 'Karnataka',
-                postalCode: '560001',
-                addressCountry: 'IN',
-              },
-              contactPoint: {
-                '@type': 'ContactPoint',
-                telephone: '+91-80-4567-8900',
-                contactType: 'customer support',
-                email: 'contact@anvitech.in',
-              },
+              '@graph': [
+                {
+                  '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
+                  '@id': 'https://www.anvitechindia.com/#organization',
+                  name: 'ANVITECH INDIA PRIVATE LIMITED',
+                  alternateName: 'ANVITECH INDIA',
+                  url: 'https://www.anvitechindia.com',
+                  logo: 'https://www.anvitechindia.com/nl.webp',
+                  image: 'https://www.anvitechindia.com/nl.webp',
+                  description:
+                    'Best software development company near me providing custom software engineering, AI agents, ERP/CRM platforms, cloud DevOps, and cybersecurity solutions.',
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: 'Bengaluru IT Hub',
+                    addressLocality: 'Bengaluru',
+                    addressRegion: 'Karnataka',
+                    postalCode: '560001',
+                    addressCountry: 'IN',
+                  },
+                  geo: {
+                    '@type': 'GeoCoordinates',
+                    latitude: 12.9716,
+                    longitude: 77.5946,
+                  },
+                  areaServed: ['India', 'Global', 'Bengaluru', 'United States', 'Europe'],
+                  contactPoint: {
+                    '@type': 'ContactPoint',
+                    telephone: '+91-80-4567-8900',
+                    contactType: 'customer support',
+                    email: 'contact@anvitech.in',
+                    availableLanguage: ['English', 'Hindi'],
+                  },
+                  hasOfferCatalog: {
+                    '@type': 'OfferCatalog',
+                    name: 'Software & Technology Services',
+                    itemListElement: [
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'Custom Software & ERP Development',
+                          description: 'Tailored enterprise ERP, CRM, and custom business management software.',
+                        },
+                      },
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'AI Solutions & Autonomous Agents',
+                          description: 'Practical AI chatbots, voice assistants, and RPA workflow automation.',
+                        },
+                      },
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'Cloud Infrastructure & DevOps',
+                          description: 'AWS, Azure, GCP cloud migration, CI/CD automation, and Kubernetes.',
+                        },
+                      },
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'Cybersecurity & Managed Maintenance (AMC)',
+                          description: 'Security auditing, penetration testing, and 24/7 software AMC support.',
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
             }),
           }}
         />
