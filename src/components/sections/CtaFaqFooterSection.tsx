@@ -59,32 +59,32 @@ export const CtaFaqFooterSection: React.FC = () => {
       {/* Main Section containing CTA + FAQ */}
       <main className="py-20 max-[900px]:py-[60px] max-w-[1100px] w-full mx-auto px-5">
         <div className="grid grid-cols-[1.6fr_1fr] gap-[30px] items-stretch max-[900px]:grid-cols-1 max-[900px]:gap-[60px]">
-          {/* Left column — Animated Gradient CTA card */}
+          {/* Left column — Animated Gradient CTA card zoomed by 20% */}
           <div
-            className="c5-animated-gradient rounded-[24px] py-20 px-10 text-white flex flex-col justify-center items-center text-center"
-            style={{ boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)' }}
+            className="c5-animated-gradient rounded-[28px] py-24 px-12 text-white flex flex-col justify-center items-center text-center transform scale-[1.04] sm:scale-[1.20] z-10 my-6 shadow-2xl transition-transform duration-300"
+            style={{ boxShadow: '0 20px 50px rgba(0, 0, 0, 0.25)' }}
           >
             <h2
-              className="font-normal leading-[1.1] mb-[15px]"
-              style={{ fontSize: '3rem', letterSpacing: '-0.03em' }}
+              className="font-extrabold leading-[1.1] mb-[18px]"
+              style={{ fontSize: '3.6rem', letterSpacing: '-0.03em' }}
             >
               Have a Business Challenge
               <br />
               to Solve?
             </h2>
-            <p className="text-[0.95rem] mb-[30px] font-normal opacity-90 max-w-md">
+            <p className="text-[1.1rem] mb-[32px] font-medium opacity-95 max-w-lg leading-relaxed">
               Tell us what you want to build, automate or improve. We'll help turn the requirement into a practical software solution.
             </p>
             <button
               type="button"
               onClick={scrollToContact}
-              className="bg-neutral-900 text-white font-semibold cursor-pointer border-none text-[0.95rem] transition-all duration-200 hover:-translate-y-0.5"
+              className="bg-neutral-900 hover:bg-black text-white font-bold cursor-pointer border-none text-[1.05rem] transition-all duration-200 hover:-translate-y-1"
               style={{
-                padding: '14px 32px',
-                borderRadius: '12px',
+                padding: '16px 40px',
+                borderRadius: '14px',
                 boxShadow: isBtnHovered
-                  ? '0 14px 30px rgba(0,0,0,0.4)'
-                  : '0 10px 20px rgba(0,0,0,0.3)',
+                  ? '0 16px 36px rgba(0,0,0,0.5)'
+                  : '0 12px 24px rgba(0,0,0,0.35)',
               }}
               onMouseEnter={() => setIsBtnHovered(true)}
               onMouseLeave={() => setIsBtnHovered(false)}
