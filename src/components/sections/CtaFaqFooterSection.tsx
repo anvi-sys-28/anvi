@@ -187,8 +187,11 @@ export const CtaFaqFooterSection: React.FC = () => {
               <h4 className="font-semibold mb-5 text-[0.95rem] text-neutral-900">
                 Enterprise Contact
               </h4>
-              <p className="text-[0.85rem] text-[#666] mb-[15px]">
-                Bengaluru, India | contact@anvitech.in
+              <p className="text-[0.85rem] text-[#666] mb-[15px] space-y-1">
+                <div>Bengaluru, India</div>
+                <div>support@anvitechindia.com</div>
+                <div>jashwanth@anvitechindia.com</div>
+                <div>shashank@anvitechindia.com</div>
               </p>
               <div className="flex gap-[10px]">
                 <input

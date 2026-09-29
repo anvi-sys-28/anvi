@@ -149,9 +149,8 @@ export default function RootLayout({
                   areaServed: ['India', 'Global', 'Bengaluru', 'United States', 'Europe'],
                   contactPoint: {
                     '@type': 'ContactPoint',
-                    telephone: '+91-80-4567-8900',
                     contactType: 'customer support',
-                    email: 'contact@anvitech.in',
+                    email: 'support@anvitechindia.com',
                     availableLanguage: ['English', 'Hindi'],
                   },
                   hasOfferCatalog: {

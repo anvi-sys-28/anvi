@@ -542,7 +542,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
 
       {/* Full-Screen Overlay Menu (When Menu Trigger Clicked) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[60px] bg-navy-DEFAULT/98 backdrop-blur-2xl z-40 flex flex-col justify-between p-8 sm:p-12 border-t border-white/10 animate-in fade-in duration-300 text-white">
+        <div 
+          style={{ backgroundColor: '#070c14' }}
+          className="fixed inset-0 top-[60px] z-[100] flex flex-col justify-between p-8 sm:p-12 border-t border-white/10 animate-in fade-in duration-300 text-white"
+        >
           <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 pt-6">
             
             {/* Left Navigation Links */}
@@ -677,8 +680,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
                     Ready to engineer your digital future? Reach out to our technology advisors.
                   </p>
                   <div className="space-y-2 text-xs font-mono text-slate-400">
-                    <div>EMAIL: contact@anvitech.in</div>
-                    <div>PHONE: +91 (080) 4567 8900</div>
+                    <div>EMAIL: support@anvitechindia.com</div>
+                    <div>EMAIL: jashwanth@anvitechindia.com</div>
+                    <div>EMAIL: shashank@anvitechindia.com</div>
                     <div>LOCATION: Bengaluru, India</div>
                   </div>
                 </div>

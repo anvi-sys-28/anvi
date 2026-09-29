@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Send, CheckCircle2 } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -62,22 +62,24 @@ export const Contact: React.FC = () => {
                   <Mail className="w-5 h-5 text-gold-DEFAULT" />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-500 font-mono uppercase tracking-wider font-bold">Email Inquiry</div>
-                  <a href="mailto:contact@anvitech.in" className="text-sm font-bold text-navy-DEFAULT hover:text-gold-dark transition-colors">
-                    contact@anvitech.in
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-navy-DEFAULT text-gold-light border border-navy-border flex items-center justify-center shrink-0 shadow-md">
-                  <Phone className="w-5 h-5 text-gold-DEFAULT" />
-                </div>
-                <div>
-                  <div className="text-xs text-slate-500 font-mono uppercase tracking-wider font-bold">Phone / WhatsApp</div>
-                  <a href="tel:+918000000000" className="text-sm font-bold text-navy-DEFAULT hover:text-gold-dark transition-colors">
-                    +91 (080) 4567 8900
-                  </a>
+                  <div className="text-xs text-slate-500 font-mono uppercase tracking-wider font-bold mb-1">Email Inquiries</div>
+                  <div className="space-y-1">
+                    <div>
+                      <a href="mailto:support@anvitechindia.com" className="text-sm font-bold text-navy-DEFAULT hover:text-gold-dark transition-colors">
+                        support@anvitechindia.com
+                      </a>
+                    </div>
+                    <div>
+                      <a href="mailto:jashwanth@anvitechindia.com" className="text-sm font-bold text-navy-DEFAULT hover:text-gold-dark transition-colors">
+                        jashwanth@anvitechindia.com
+                      </a>
+                    </div>
+                    <div>
+                      <a href="mailto:shashank@anvitechindia.com" className="text-sm font-bold text-navy-DEFAULT hover:text-gold-dark transition-colors">
+                        shashank@anvitechindia.com
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
 

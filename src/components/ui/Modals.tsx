@@ -240,7 +240,7 @@ export const Modals: React.FC<ModalsProps> = ({
 
               <button
                 onClick={() => {
-                  alert('Thank you! Your details have been submitted to careers@anvitech.in');
+                  alert('Thank you! Your details have been submitted to support@anvitechindia.com');
                   onCloseCareersModal();
                 }}
                 className="w-full py-3 bg-gold-gradient text-navy-DEFAULT font-bold rounded-md shadow-gold-glow"
