@@ -4,25 +4,22 @@ export interface ServiceDetail {
   title: string;
   subtitle: string;
   badge: string;
-  startingPrice: string;
-  priceNote: string;
   shortDesc: string;
   fullDesc: string;
   eligibility: string[];
   features: string[];
   capabilities: string[];
   deliverables: string[];
+  documentsTable?: { category: string; details: string }[];
 }
 
 export const servicesList: ServiceDetail[] = [
   {
-    slug: 'custom-software-development',
+    slug: 'custom-software-enterprise-erp-development',
     category: 'Software Engineering',
     title: 'Custom Software & Enterprise ERP Development',
-    subtitle: 'Tailored enterprise platforms, ERP, CRM, and custom workflows built around your organization.',
+    subtitle: 'Tailored enterprise platforms, ERP, CRM, HRMS, and custom business workflows built around your organization.',
     badge: 'Enterprise Software & ERP',
-    startingPrice: '₹49,999',
-    priceNote: 'All-inclusive, custom scope',
     shortDesc: 'Tailored software solutions engineered to automate complex business workflows, multi-tenant operations, and department systems.',
     fullDesc: 'We architect and build tailored enterprise software systems specifically around your company’s unique workflows. From multi-branch ERP and custom CRM platforms to automated HRMS and Document Management Systems (DMS), our software is engineered for maximum throughput, fault-tolerant reliability, and seamless API integration.',
     eligibility: [
@@ -34,7 +31,7 @@ export const servicesList: ServiceDetail[] = [
       '3-7 working days initial blueprint',
       '100% online cloud architecture',
       'Dedicated Solution Architect',
-      'Free follow-up maintenance & SLA support',
+      'Free follow-up support & SLA maintenance',
     ],
     capabilities: [
       'ERP & CRM: Enterprise Resource Planning and Customer Relationship Management',
@@ -46,17 +43,20 @@ export const servicesList: ServiceDetail[] = [
       'Production-ready scalable web application',
       'REST & GraphQL API Architecture',
       'Source Code & Deployment Documentation',
-      'Post-deployment Monitoring & Training',
+      'Post-deployment Monitoring & Staff Training',
+    ],
+    documentsTable: [
+      { category: 'Business Details', details: 'Proposed Architecture & Organizational Workflow Specifications' },
+      { category: 'Technical Scope', details: 'Module Requirements, Role Matrix & Data Migration Plan' },
+      { category: 'Security & Compliance', details: 'Role-based Access Control (RBAC), Audit Trail & Encryption Protocol' },
     ],
   },
   {
-    slug: 'web-mobile-apps',
+    slug: 'web-mobile-application-engineering',
     category: 'App Engineering',
     title: 'Web & Mobile Application Engineering',
-    subtitle: 'Native and cross-platform apps for iOS, Android, and modern Web platforms.',
+    subtitle: 'Native and cross-platform mobile apps for iOS, Android, PWA, and modern Web platforms.',
     badge: 'Web & Mobile Engineering',
-    startingPrice: '₹29,999',
-    priceNote: 'All-inclusive cross-platform delivery',
     shortDesc: 'Fast, intuitive, and responsive web and mobile applications designed to deliver exceptional experiences across all devices.',
     fullDesc: 'We develop high-performance mobile and web applications connected to your APIs, cloud infrastructure, and business databases. Whether building customer-facing marketplaces, field service mobile apps, or enterprise web portals, our engineering ensures sub-second speeds and offline data synchronization.',
     eligibility: [
@@ -82,15 +82,18 @@ export const servicesList: ServiceDetail[] = [
       'Backend API integration & database schema',
       'UX/UI Design System & Assets',
     ],
+    documentsTable: [
+      { category: 'App Wireframes', details: 'Figma UI/UX Mockups & Interactive User Prototypes' },
+      { category: 'Platform Support', details: 'iOS App Store & Google Play Store Distribution Credentials' },
+      { category: 'API Integration', details: 'Payment Gateway, Push Notifications & Third-Party SDK Integrations' },
+    ],
   },
   {
-    slug: 'ai-automation',
+    slug: 'ai-solutions-chatbots-intelligent-automation',
     category: 'Artificial Intelligence',
     title: 'AI Solutions, Chatbots & Intelligent Automation',
-    subtitle: 'Intelligent AI agents, RPA, voice assistants, and predictive analytics to streamline operations.',
+    subtitle: 'Intelligent AI agents, RPA, voice assistants, OCR, and predictive analytics to streamline operations.',
     badge: 'AI & Automation',
-    startingPrice: '₹39,999',
-    priceNote: 'Turnkey AI deployment',
     shortDesc: 'Practical AI solutions and autonomous agents that automate work, process documents, assist customer support, and forecast business metrics.',
     fullDesc: 'Empower your enterprise with practical Artificial Intelligence. We deploy autonomous AI agents, 24/7 intelligent voice and chat assistants, robotic process automation (RPA), and predictive analytics algorithms trained on your business data to turn manual overhead into automated efficiency.',
     eligibility: [
@@ -116,15 +119,18 @@ export const servicesList: ServiceDetail[] = [
       'Interactive AI Dashboard',
       'Data Privacy & Security Safeguards',
     ],
+    documentsTable: [
+      { category: 'Training Datasets', details: 'Anonymized Knowledge Base & Enterprise Documentation' },
+      { category: 'Model Parameters', details: 'Custom Prompt Templates, Fine-Tuning Specifications & Safety Rails' },
+      { category: 'Integration Blueprint', details: 'Webhook Triggers, CRM Sync & Automation Logs' },
+    ],
   },
   {
-    slug: 'cloud-devops',
+    slug: 'cloud-infrastructure-migration-devops',
     category: 'Cloud Infrastructure',
     title: 'Cloud Infrastructure, Migration & DevOps',
     subtitle: 'Secure cloud deployment on AWS, Azure, GCP with Kubernetes, CI/CD pipelines, and 24/7 SLA.',
     badge: 'Cloud & DevOps',
-    startingPrice: '₹19,999',
-    priceNote: 'Monthly managed cloud plan',
     shortDesc: 'Resilient cloud infrastructure management, containerization, automated deployment pipelines, and zero-downtime operations.',
     fullDesc: 'Transition your workloads to AWS, Microsoft Azure, or Google Cloud with zero data loss. We automate deployment through CI/CD pipelines, manage Kubernetes clusters, enforce Zero Trust security, and provide 24/7 uptime monitoring and disaster recovery.',
     eligibility: [
@@ -150,15 +156,18 @@ export const servicesList: ServiceDetail[] = [
       'Automated Backup & Failover System',
       '24/7 Cloud Monitoring Dashboard',
     ],
+    documentsTable: [
+      { category: 'Cloud Topology', details: 'VPC, Subnet, Load Balancer & Auto-scaling Diagrams' },
+      { category: 'IaC Scripts', details: 'Terraform Configurations & Helm Chart Repository' },
+      { category: 'SLA Agreement', details: '24/7 Uptime SLA, Incident Response Matrix & Backup Policy' },
+    ],
   },
   {
-    slug: 'cybersecurity-soc',
+    slug: 'cybersecurity-threat-monitoring-soc',
     category: 'Security & Compliance',
     title: 'Cybersecurity, Threat Monitoring & SOC',
     subtitle: 'Advanced threat monitoring, vulnerability scanning, SIEM dashboards, and compliance readiness.',
     badge: 'Cybersecurity',
-    startingPrice: '₹24,999',
-    priceNote: 'Per audit / retainer',
     shortDesc: 'Protect your software applications and cloud infrastructure with continuous threat monitoring, penetration testing, and identity governance.',
     fullDesc: 'Protecting your digital assets is embedded into every line of code we write. We perform deep vulnerability assessments, deploy Zero Trust architecture, configure identity governance, and provide Security Operations Center (SOC) reporting for regulatory compliance.',
     eligibility: [
@@ -184,15 +193,18 @@ export const servicesList: ServiceDetail[] = [
       'Zero Trust Implementation Guide',
       '24/7 SIEM Security Dashboard',
     ],
+    documentsTable: [
+      { category: 'Audit Report', details: 'OWASP Top 10 Vulnerability Assessment & Remediation Matrix' },
+      { category: 'Compliance Pack', details: 'ISO 27001 / SOC2 Readiness Evidence Checklist' },
+      { category: 'Security Logs', details: 'Centralized SIEM Event Logs & Anomaly Detection Triggers' },
+    ],
   },
   {
-    slug: 'support-amc-maintenance',
+    slug: 'software-support-amc-managed-maintenance',
     category: 'Managed Support',
     title: 'Software Support, AMC & Managed Maintenance',
     subtitle: 'Annual Maintenance Contracts (AMC), 24/7 technical support, performance tuning, and updates.',
     badge: 'Support & AMC',
-    startingPrice: '₹9,999',
-    priceNote: 'Monthly maintenance retainer',
     shortDesc: 'Keep your software applications stable, secure, and up-to-date with round-the-clock technical support, bug fixes, and feature upgrades.',
     fullDesc: 'We don’t just build software and leave. Our dedicated maintenance and support packages ensure your applications remain operational, secure, and compatible with emerging tech standards as your business scales.',
     eligibility: [
@@ -217,6 +229,11 @@ export const servicesList: ServiceDetail[] = [
       'SLA Response Time Guarantee',
       'Monthly Security & Backup Audit',
       'Ongoing Feature Enhancement Sprint',
+    ],
+    documentsTable: [
+      { category: 'AMC Agreement', details: 'Scope of Coverage, Response Time SLA & Escalation Hierarchy' },
+      { category: 'Maintenance Logs', details: 'Monthly Health Check, Server Resource & Patch Reports' },
+      { category: 'Backup Verification', details: 'Disaster Recovery Simulation & Database Integrity Audit' },
     ],
   },
 ];

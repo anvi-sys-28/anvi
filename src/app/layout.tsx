@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Inter, DM_Serif_Display } from 'next/font/google';
-import { ThemeProvider } from '@/context/ThemeContext';
 import './globals.css';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -200,9 +199,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-brand-bg text-navy-DEFAULT antialiased selection:bg-gold-DEFAULT selection:text-navy-DEFAULT">
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );

@@ -16,20 +16,20 @@ export default function ServicesPage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-orange-500 selection:text-white">
+    <main className="min-h-screen bg-[#fcfaf7] text-slate-900 selection:bg-[#FFDEAD] selection:text-slate-900">
       {/* 1. Header Navigation */}
       <Navbar onOpenContactModal={scrollToContact} />
 
-      {/* 2. Hero Header Banner */}
-      <section className="bg-[#0b2b4c] text-white pt-32 pb-20 px-4 sm:px-8 lg:px-12 border-b border-navy-border/60">
+      {/* 2. Hero Header Banner (Navajo White #FFDEAD) */}
+      <section className="bg-[#FFDEAD] text-[#1a1008] pt-32 pb-20 px-4 sm:px-8 lg:px-12 border-b border-[#f3cb98]">
         <div className="max-w-6xl mx-auto text-center">
-          <span className="inline-block bg-white/15 text-orange-400 text-xs font-mono font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 border border-white/10">
+          <span className="block text-xs font-mono font-bold text-[#8a4b08] uppercase tracking-widest mb-3">
             CORPORATE SERVICE PORTFOLIO
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight mb-6">
-            Software & IT Services Portfolio
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight mb-6 text-[#1a1008]">
+            Software & IT Solutions Portfolio
           </h1>
-          <p className="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[#4a3012] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-medium">
             Full-stack software engineering, custom ERP platforms, AI solutions, cloud infrastructure, and 24/7 AMC software maintenance for growing enterprises.
           </p>
         </div>
@@ -44,19 +44,19 @@ export default function ServicesPage() {
               return (
                 <div
                   key={service.slug}
-                  className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-slate-200/90 hover:border-orange-500/50 transition-all duration-300 flex flex-col justify-between group"
+                  className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-slate-200/90 hover:border-[#e88923]/50 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-navy-DEFAULT/5 text-navy-DEFAULT group-hover:bg-orange-500 group-hover:text-white flex items-center justify-center transition-colors">
+                      <div className="w-12 h-12 rounded-xl bg-orange-50 text-[#e88923] group-hover:bg-[#e88923] group-hover:text-white flex items-center justify-center transition-colors">
                         <IconComp className="w-6 h-6" />
                       </div>
-                      <span className="text-xs font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full border border-orange-200">
-                        {service.startingPrice}
+                      <span className="text-xs font-mono font-bold text-[#8a4b08] uppercase tracking-wider">
+                        {service.category}
                       </span>
                     </div>
 
-                    <h2 className="text-xl font-bold text-slate-900 font-heading mb-3 group-hover:text-orange-600 transition-colors">
+                    <h2 className="text-xl font-bold text-slate-900 font-heading mb-3 group-hover:text-[#e88923] transition-colors">
                       {service.title}
                     </h2>
                     <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6 font-sans">
@@ -66,7 +66,7 @@ export default function ServicesPage() {
                     <div className="space-y-2 mb-6 pt-4 border-t border-slate-100">
                       {service.capabilities.slice(0, 3).map((cap, i) => (
                         <div key={i} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-                          <CheckCircle className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                          <CheckCircle className="w-3.5 h-3.5 text-[#d67311] shrink-0" />
                           <span className="line-clamp-1">{cap}</span>
                         </div>
                       ))}
@@ -75,7 +75,7 @@ export default function ServicesPage() {
 
                   <Link
                     href={`/services/${service.slug}`}
-                    className="w-full py-3 bg-navy-DEFAULT hover:bg-orange-600 text-white font-bold text-xs rounded-xl shadow transition-colors flex items-center justify-center gap-2"
+                    className="w-full py-3 bg-[#e88923] hover:bg-[#d47817] text-white font-bold text-xs rounded-xl shadow transition-colors flex items-center justify-center gap-2"
                   >
                     <span>View Full Service Details</span>
                     <ArrowRight className="w-4 h-4" />
