@@ -5,10 +5,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { TechStackMarqueeSection } from '@/components/sections/TechStackMarqueeSection';
 import { Services, ServiceItem } from '@/components/sections/Services';
-import { Solutions, SolutionItem } from '@/components/sections/Solutions';
-import { Process } from '@/components/sections/Process';
-import { Industries } from '@/components/sections/Industries';
-import { WhyAnvitech } from '@/components/sections/WhyAnvitech';
+import { Solutions } from '@/components/sections/Solutions';
 import { BehindTheLensSection } from '@/components/sections/BehindTheLensSection';
 import { CtaFaqFooterSection } from '@/components/sections/CtaFaqFooterSection';
 import { Modals } from '@/components/ui/Modals';
@@ -44,19 +41,10 @@ export default function HomePage() {
       {/* 5. Connected Systems & Solutions Section (AI, ERP, CRM, Logistics, Cloud, Security) */}
       <Solutions />
 
-      {/* 6. End-to-End Engineering Methodology (From Idea to Production) */}
-      <Process />
-
-      {/* 7. Industry Specific Vertical Solutions */}
-      <Industries />
-
-      {/* 8. Software Management & Lifecycle Support (We Build It. We Manage It. We Improve It.) */}
-      <WhyAnvitech />
-
-      {/* 9. Technology Insights & Blog Section */}
+      {/* 6. Technology Insights & Blog Section */}
       <BehindTheLensSection />
 
-      {/* 10. CTA + FAQ + Footer Section */}
+      {/* 7. CTA + FAQ + Footer Section */}
       <CtaFaqFooterSection />
 
       {/* Interactive Detail Modals */}
