@@ -4,14 +4,21 @@ import React, { useState } from 'react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { TechStackMarqueeSection } from '@/components/sections/TechStackMarqueeSection';
+import { Services, ServiceItem } from '@/components/sections/Services';
+import { Solutions, SolutionItem } from '@/components/sections/Solutions';
+import { Process } from '@/components/sections/Process';
+import { Industries } from '@/components/sections/Industries';
+import { WhyAnvitech } from '@/components/sections/WhyAnvitech';
 import { BehindTheLensSection } from '@/components/sections/BehindTheLensSection';
 import { CtaFaqFooterSection } from '@/components/sections/CtaFaqFooterSection';
 import { Modals } from '@/components/ui/Modals';
 
 export default function HomePage() {
+  const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
+
   const scrollToContact = () => {
-    const faqEl = document.querySelector('footer');
-    faqEl?.scrollIntoView({ behavior: 'smooth' });
+    const contactEl = document.getElementById('contact');
+    contactEl?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -21,23 +28,41 @@ export default function HomePage() {
 
       {/* 2. Hero Section */}
       <Hero
-        onExploreSolutions={scrollToContact}
+        onExploreSolutions={() => {
+          const el = document.getElementById('services');
+          el?.scrollIntoView({ behavior: 'smooth' });
+        }}
         onTalkToTeam={scrollToContact}
       />
 
-      {/* 3. Tech Stack Infinite Marquee Section (Scrolling Left to Right) */}
+      {/* 3. Tech Stack Infinite Marquee Section */}
       <TechStackMarqueeSection />
 
-      {/* Behind the Lens Section */}
+      {/* 4. Software Development Section */}
+      <Services onSelectService={(service) => setSelectedService(service)} />
+
+      {/* 5. Connected Systems & Solutions Section (AI, ERP, CRM, Logistics, Cloud, Security) */}
+      <Solutions />
+
+      {/* 6. End-to-End Engineering Methodology (From Idea to Production) */}
+      <Process />
+
+      {/* 7. Industry Specific Vertical Solutions */}
+      <Industries />
+
+      {/* 8. Software Management & Lifecycle Support (We Build It. We Manage It. We Improve It.) */}
+      <WhyAnvitech />
+
+      {/* 9. Technology Insights & Blog Section */}
       <BehindTheLensSection />
 
-      {/* 4. CTA + FAQ + Footer Section */}
+      {/* 10. CTA + FAQ + Footer Section */}
       <CtaFaqFooterSection />
 
       {/* Interactive Detail Modals */}
       <Modals
-        activeService={null}
-        onCloseServiceModal={() => {}}
+        activeService={selectedService}
+        onCloseServiceModal={() => setSelectedService(null)}
         activeCaseStudy={null}
         onCloseCaseStudyModal={() => {}}
         discoverModalOpen={false}

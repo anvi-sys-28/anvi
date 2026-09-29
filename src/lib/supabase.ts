@@ -26,12 +26,12 @@ export const defaultBlogPosts: BlogPost[] = [
     id: 1,
     type: 'featured',
     badge: 'Must Read',
-    title: 'Full-Frame vs. Crop Sensor: Which for Photography?',
+    title: 'Architecting Custom ERP & CRM Platforms for Enterprise Scale',
     description:
-      "An honest look at the real-world differences between these camera systems to help you choose what's actually right for your photography needs.",
-    author: 'By August Renner (c)',
-    category: 'Gear',
-    category_color: '#7d1a4a',
+      "An engineering guide to designing modular, multi-tenant ERP and CRM architectures that streamline operations and sync data across enterprise branches.",
+    author: 'By ANVITECH Engineering Team',
+    category: 'Enterprise',
+    category_color: '#1a2b8c',
     video_url:
       'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_155500_808e6fdd-761f-4acd-b3be-cb7e6e700def.mp4',
     display_order: 1,
@@ -39,9 +39,9 @@ export const defaultBlogPosts: BlogPost[] = [
   {
     id: 2,
     type: 'standard',
-    title: 'Finding Natural Light in Unexpected Places',
-    category: 'Lighting',
-    category_color: '#2c4c34',
+    title: 'Deploying AI Agents in Business Workflows: Practical Patterns',
+    category: 'AI & Automation',
+    category_color: '#7d1a4a',
     video_url:
       'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260506_030111_a9e15665-d379-4a7f-8116-695bbe452ad1.mp4',
     display_order: 2,
@@ -49,9 +49,9 @@ export const defaultBlogPosts: BlogPost[] = [
   {
     id: 3,
     type: 'standard',
-    title: 'My Approach to Editing: Creating a Consistent Photography Style',
-    category: 'Editing',
-    category_color: '#a63e2d',
+    title: 'Building Resilient Logistics Software with Real-Time Tracking',
+    category: 'Logistics',
+    category_color: '#2c4c34',
     video_url:
       'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064122_c4750c0e-7476-4b44-94a2-a85a65c63bf2.mp4',
     display_order: 3,
@@ -59,9 +59,9 @@ export const defaultBlogPosts: BlogPost[] = [
   {
     id: 4,
     type: 'standard',
-    title: 'Pricing Your Photography: Strategies That Work',
-    category: 'Business',
-    category_color: '#1a2b8c',
+    title: 'DevOps & Cloud Strategies for Zero-Downtime Deployment',
+    category: 'Cloud & DevOps',
+    category_color: '#a63e2d',
     video_url:
       'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_154232_f8809bd2-a6c3-4a38-908d-2005e5b3cb3e.mp4',
     display_order: 4,

@@ -100,7 +100,7 @@ export const Industries: React.FC = () => {
             Technology Across Industries
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-sans">
-            Delivering domain-specific software solutions compliant with international security, data privacy, and performance standards.
+            We build software around industry-specific workflows and business requirements.
           </p>
         </div>
 

@@ -7,57 +7,57 @@ export const processSteps = [
   {
     num: '01',
     title: 'Discover',
-    desc: 'Deep-dive into business workflows, pain points, security constraints, and ROI objectives.',
+    desc: 'Understand the business, users, workflows, security requirements and ROI objectives.',
     icon: Search,
   },
   {
     num: '02',
-    title: 'Strategize',
-    desc: 'Formulate system architecture, tech stack selection, milestone timelines, and risk mitigation plans.',
+    title: 'Plan',
+    desc: 'Define architecture, technology stack selection, features roadmap and development milestones.',
     icon: Compass,
   },
   {
     num: '03',
     title: 'Design',
-    desc: 'Craft intuitive user interfaces, design systems, and data schemas aligned with end-user goals.',
+    desc: 'Create intuitive user experiences, design systems, and software schemas around business processes.',
     icon: Palette,
   },
   {
     num: '04',
-    title: 'Engineer',
-    desc: 'Develop clean, modular, and high-performance software with continuous integration and security audits.',
+    title: 'Develop',
+    desc: 'Build scalable, reliable and high-performance software using modern, tested technologies.',
     icon: Code,
   },
   {
     num: '05',
-    title: 'Deploy',
-    desc: 'Execute zero-downtime production deployment, cloud environment provisioning, and automated monitoring.',
+    title: 'Integrate & Deploy',
+    desc: 'Connect APIs, databases, AI systems, and move the application into production on cloud infrastructure.',
     icon: Rocket,
   },
   {
     num: '06',
-    title: 'Evolve',
-    desc: 'Gather operational metrics, optimize performance, roll out new features, and scale capabilities.',
+    title: 'Manage',
+    desc: 'Maintain, monitor, secure, optimize performance, and continuously improve software after launch.',
     icon: RefreshCw,
   },
 ];
 
 export const Process: React.FC = () => {
   return (
-    <section className="py-24 lg:py-32 bg-white border-b border-slate-100 relative overflow-hidden">
+    <section id="process" className="py-24 lg:py-32 bg-white border-b border-slate-100 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <div className="text-xs font-bold tracking-[0.25em] text-gold-dark uppercase mb-3 flex items-center gap-2">
             <span className="w-8 h-[2px] bg-gold-DEFAULT" />
-            <span>METHODOLOGY</span>
+            <span>END-TO-END DEVELOPMENT</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-DEFAULT font-heading tracking-tight mb-6">
-            Our Engineering Process
+            From Idea to Production
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-sans">
-            A structured, transparent 6-stage lifecycle engineered for predictability, rapid delivery, and enterprise compliance.
+            From business requirements to production-ready software, we handle the complete technology lifecycle.
           </p>
         </div>
 

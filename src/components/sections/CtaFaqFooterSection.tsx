@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Logo } from '@/components/ui/Logo';
 
 interface FaqItem {
   question: string;
@@ -10,29 +11,29 @@ interface FaqItem {
 
 const faqData: FaqItem[] = [
   {
-    question: 'What is the maximum amount I can send?',
+    question: 'What software development services does ANVITECH INDIA provide?',
     answer:
-      'Transfer limits depend on your verification level and country. You can check your limits inside your account settings.',
+      'ANVITECH INDIA provides end-to-end software development including custom software, AI solutions & agents, ERP, CRM, logistics software, web and mobile applications, cloud & DevOps, cybersecurity, and continuous software management.',
   },
   {
-    question: 'Does my recipient need an account?',
+    question: 'How does ANVITECH approach project requirement gathering?',
     answer:
-      "No, your recipient doesn't need an account. Funds can be sent directly to their bank account or mobile wallet.",
+      'We follow a structured discovery phase to map your business processes, technical requirements, security needs, and scalability goals before defining the architecture and development roadmap.',
   },
   {
-    question: 'Is there a mobile app available?',
+    question: 'Do you provide ongoing software maintenance after deployment?',
     answer:
-      'Yes, our mobile app is available on both iOS and Android for easy transfers on the go.',
+      'Yes. We manage, monitor, secure, and continuously optimize software applications post-deployment to ensure long-term stability, performance, and feature evolution.',
   },
   {
-    question: 'Can I cancel a transfer?',
+    question: 'Can ANVITECH integrate AI into our existing business software?',
     answer:
-      'Transfers can be cancelled if they have not yet been processed by the receiving bank. Check your transfer status for options.',
+      'Yes. We integrate practical AI capabilities, autonomous AI agents, predictive models, and automated workflows into existing ERP, CRM, and custom business applications.',
   },
   {
-    question: 'What currencies are supported?',
+    question: 'What technology stack does ANVITECH INDIA specialize in?',
     answer:
-      'We support over 50 currencies worldwide. You can view the full list of supported currencies in our app or website.',
+      'We build using modern enterprise technologies across Web (React, Next.js, TypeScript), Mobile (iOS, Android, React Native), Backend (Node.js, Python), Cloud (AWS, Azure, GCP, Docker, Kubernetes), and Databases (PostgreSQL, MongoDB).',
   },
 ];
 
@@ -44,8 +45,14 @@ export const CtaFaqFooterSection: React.FC = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const scrollToContact = () => {
+    const contactEl = document.getElementById('contact') || document.getElementById('home');
+    contactEl?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div
+      id="contact"
       className="bg-white text-neutral-900 w-full"
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
@@ -59,17 +66,18 @@ export const CtaFaqFooterSection: React.FC = () => {
           >
             <h2
               className="font-normal leading-[1.1] mb-[15px]"
-              style={{ fontSize: '3.5rem', letterSpacing: '-0.03em' }}
+              style={{ fontSize: '3rem', letterSpacing: '-0.03em' }}
             >
-              Ready to Transfer
+              Have a Business Challenge
               <br />
-              Without Borders?
+              to Solve?
             </h2>
-            <p className="text-[0.9rem] mb-[30px] font-normal opacity-85">
-              Send Money Worldwide at the Best Rates
+            <p className="text-[0.95rem] mb-[30px] font-normal opacity-90 max-w-md">
+              Tell us what you want to build, automate or improve. We'll help turn the requirement into a practical software solution.
             </p>
             <button
               type="button"
+              onClick={scrollToContact}
               className="bg-neutral-900 text-white font-semibold cursor-pointer border-none text-[0.95rem] transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 padding: '14px 32px',
@@ -81,7 +89,7 @@ export const CtaFaqFooterSection: React.FC = () => {
               onMouseEnter={() => setIsBtnHovered(true)}
               onMouseLeave={() => setIsBtnHovered(false)}
             >
-              Get Started Today
+              Start a Project
             </button>
           </div>
 
@@ -127,28 +135,25 @@ export const CtaFaqFooterSection: React.FC = () => {
           <div className="grid grid-cols-[2fr_1fr_1fr_2fr] gap-10 mb-[50px] max-[900px]:grid-cols-2 max-[480px]:grid-cols-1">
             {/* 1. Logo column */}
             <div>
-              <img
-                src="https://pub-f170a2592d2c4a1485466404c36807be.r2.dev/Tests/logoipsum-415.svg"
-                className="h-6 mb-[15px]"
-                style={{ filter: 'brightness(0)' }}
-                alt="Logo"
-              />
-              <p className="text-[0.85rem] text-[#888] leading-[1.6] max-w-[220px]">
-                Reliable transfers that always reach their destination on time.
+              <div className="mb-[15px]">
+                <Logo variant="light" size="sm" />
+              </div>
+              <p className="text-[0.85rem] text-[#666] leading-[1.6] max-w-[240px]">
+                ANVITECH INDIA PRIVATE LIMITED builds and manages technology that helps businesses operate, automate and grow.
               </p>
             </div>
 
-            {/* 2. Navigation */}
+            {/* 2. Services Navigation */}
             <div>
               <h4 className="font-semibold mb-5 text-[0.95rem] text-neutral-900">
-                Navigation
+                Services
               </h4>
               <ul>
-                {['Features', 'Benefits', 'Testimonials', 'Pricing'].map(
+                {['Custom Software', 'AI Solutions & Agents', 'ERP & CRM Systems', 'Logistics Software', 'Cloud & DevOps'].map(
                   (linkText, idx) => (
                     <li key={idx} className="mb-3">
                       <a
-                        href="#"
+                        href="#services"
                         className="text-[#888] no-underline text-[0.85rem] transition-colors duration-200 hover:text-neutral-900"
                       >
                         {linkText}
@@ -159,16 +164,16 @@ export const CtaFaqFooterSection: React.FC = () => {
               </ul>
             </div>
 
-            {/* 3. Pages */}
+            {/* 3. Company Navigation */}
             <div>
               <h4 className="font-semibold mb-5 text-[0.95rem] text-neutral-900">
-                Pages
+                Company
               </h4>
               <ul>
-                {['Home', 'Contact', '404'].map((pageText, idx) => (
+                {['About Us', 'Methodology', 'Industries', 'Technology Stack', 'Contact Us'].map((pageText, idx) => (
                   <li key={idx} className="mb-3">
                     <a
-                      href="#"
+                      href="#home"
                       className="text-[#888] no-underline text-[0.85rem] transition-colors duration-200 hover:text-neutral-900"
                     >
                       {pageText}
@@ -178,18 +183,18 @@ export const CtaFaqFooterSection: React.FC = () => {
               </ul>
             </div>
 
-            {/* 4. Newsletter */}
+            {/* 4. Contact & Newsletter */}
             <div>
               <h4 className="font-semibold mb-5 text-[0.95rem] text-neutral-900">
-                Newsletter
+                Enterprise Contact
               </h4>
-              <p className="text-[0.85rem] text-[#888] mb-[15px]">
-                Join our newsletter and get notified.
+              <p className="text-[0.85rem] text-[#666] mb-[15px]">
+                Bengaluru, India | contact@anvitech.in
               </p>
               <div className="flex gap-[10px]">
                 <input
                   type="email"
-                  placeholder="Enter your email..."
+                  placeholder="Enter work email..."
                   className="flex-grow border border-[#f0f0f0] bg-white outline-none transition-colors duration-200 focus:border-[#ccc] text-[0.9rem]"
                   style={{
                     padding: '12px 16px',
@@ -201,9 +206,9 @@ export const CtaFaqFooterSection: React.FC = () => {
                   type="button"
                   className="bg-neutral-900 text-white border-none font-semibold cursor-pointer transition-all duration-200 hover:-translate-y-0.5 text-[0.9rem]"
                   style={{
-                    padding: '12px 28px',
+                    padding: '12px 24px',
                     borderRadius: '10px',
-                    boxShadow: '0 12px 24px rgba(0,0,0,0.4)',
+                    boxShadow: '0 12px 24px rgba(0,0,0,0.3)',
                   }}
                 >
                   Subscribe
@@ -214,8 +219,8 @@ export const CtaFaqFooterSection: React.FC = () => {
 
           {/* Bottom bar */}
           <div className="border-t border-[#f0f0f0] pt-[25px] pb-[10px] flex justify-between text-[0.85rem] text-[#888] max-[480px]:flex-col max-[480px]:gap-[15px] max-[480px]:items-center">
-            <span>All rights reserved. © 2025</span>
-            <span>Designed by Peter Design</span>
+            <span>© 2026 ANVITECH INDIA PRIVATE LIMITED. All Rights Reserved.</span>
+            <span>Enterprise Software & Technology Engineering Partner</span>
           </div>
         </div>
       </footer>

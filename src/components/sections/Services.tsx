@@ -30,76 +30,76 @@ interface ServicesProps {
 
 export const servicesData: ServiceItem[] = [
   {
-    id: 'software-development',
+    id: 'custom-applications',
     num: '01',
-    title: 'Software Development',
-    shortDesc: 'Custom web and enterprise applications designed for high load and complex business logic.',
-    fullDesc: 'We architect and build tailored enterprise software platforms, microservices architectures, and robust web applications engineered for security, high throughput, and seamless integration.',
-    features: ['Custom Web Applications', 'Enterprise ERP & CRM', 'API Architecture & Integration', 'Legacy System Modernization'],
+    title: 'Custom Applications',
+    shortDesc: 'Purpose-built software designed around your unique business workflows and requirements.',
+    fullDesc: 'We build software specifically around a company\'s business processes, workflows and requirements — from standalone operational apps to full business software ecosystems.',
+    features: ['Custom Business Workflows', 'Tailored Logic & Architecture', 'API Integration & Connectivity', 'Legacy System Modernization'],
     icon: Code,
   },
   {
-    id: 'mobile-app-development',
+    id: 'enterprise-software',
     num: '02',
-    title: 'Mobile Application Development',
-    shortDesc: 'High-performance mobile applications for Android and iOS with native responsiveness.',
-    fullDesc: 'Crafting intuitive, fast, and feature-rich cross-platform and native mobile apps designed to deliver exceptional user experiences across all devices.',
-    features: ['iOS & Android Native Dev', 'React Native & Flutter', 'Offline-First Architecture', 'Real-Time Sync Systems'],
+    title: 'Enterprise Software',
+    shortDesc: 'Scalable platforms that connect teams, processes and multi-branch business operations.',
+    fullDesc: 'Building high-throughput enterprise platforms engineered for reliability, security, multi-department coordination, and real-time operational visibility.',
+    features: ['Multi-Branch Architecture', 'Role-Based Access Control', 'Departmental Workflow Sync', 'High Concurrency Engine'],
+    icon: Briefcase,
+  },
+  {
+    id: 'web-applications',
+    num: '03',
+    title: 'Web Applications',
+    shortDesc: 'Modern, secure and scalable web applications for customers, employees and internal teams.',
+    fullDesc: 'Developing fast, responsive, cloud-hosted web applications with modern frontend frameworks and robust backend APIs built for performance and growth.',
+    features: ['Modern Frontend Frameworks', 'Scalable Backend APIs', 'Responsive Cross-Device UI', 'High-Speed Web Portals'],
+    icon: Layout,
+  },
+  {
+    id: 'mobile-applications',
+    num: '04',
+    title: 'Mobile Applications',
+    shortDesc: 'Mobile experiences connected to your business systems, APIs, databases and cloud infrastructure.',
+    fullDesc: 'Cross-platform and native mobile apps designed to extend your business workflows into mobile devices for field staff, management, and customers.',
+    features: ['iOS & Android Apps', 'API & Database Connection', 'Offline Data Synchronization', 'Push Notifications & Tracking'],
     icon: Smartphone,
   },
   {
-    id: 'ai-automation',
-    num: '03',
-    title: 'AI & Automation',
-    shortDesc: 'AI-powered systems, intelligent automation and predictive workflow optimization.',
-    fullDesc: 'Leverage generative AI, custom Machine Learning algorithms, and robotic process automation (RPA) to automate repetitive operations and unlock deep domain intelligence.',
-    features: ['Generative AI & LLM Integration', 'Predictive Analytics Models', 'Workflow Automation (RPA)', 'Intelligent Document Processing'],
+    id: 'ai-solutions-agents',
+    num: '05',
+    title: 'AI Solutions & Agents',
+    shortDesc: 'Practical AI-powered solutions and intelligent agents to automate work and assist workflows.',
+    fullDesc: 'We develop practical AI solutions and autonomous agents capable of understanding tasks, processing information, and interacting with business systems.',
+    features: ['Custom AI Agents & Tools', 'Workflow Automation (RPA)', 'Document & Data Intelligence', 'AI Assistant Integration'],
     icon: Bot,
   },
   {
     id: 'cloud-devops',
-    num: '04',
+    num: '06',
     title: 'Cloud & DevOps',
-    shortDesc: 'Cloud infrastructure, automated deployment, monitoring and scalable architecture.',
-    fullDesc: 'Empowering enterprises with resilient AWS, Azure, and Google Cloud infrastructure, Automated CI/CD pipelines, containerization, and 24/7 reliability engineering.',
-    features: ['Cloud Migration & Hybrid Cloud', 'Kubernetes & Docker Containerization', 'Automated CI/CD Pipelines', 'Infrastructure as Code (IaC)'],
+    shortDesc: 'Deploy, manage, monitor and scale applications using modern cloud infrastructure.',
+    fullDesc: 'Deploying and managing applications on AWS, Azure, and Google Cloud with automated CI/CD pipelines, containerization, and continuous monitoring.',
+    features: ['Automated CI/CD Pipelines', 'Cloud Infrastructure Management', 'Containerization (Docker/K8s)', '24/7 Monitoring & Scaling'],
     icon: Cloud,
   },
   {
     id: 'cybersecurity',
-    num: '05',
+    num: '07',
     title: 'Cybersecurity',
-    shortDesc: 'Security-focused systems, vulnerability assessments and active protection strategies.',
-    fullDesc: 'Protect your critical business assets with Zero Trust security frameworks, penetration testing, compliance readiness (SOC2, ISO 27001), and threat monitoring.',
-    features: ['Vulnerability & Risk Audits', 'Zero Trust Architecture', 'Identity & Access Management', 'Security Compliance Consulting'],
+    shortDesc: 'Software and technology solutions engineered with application and data security in mind.',
+    fullDesc: 'We provide software and technology solutions designed with security, data protection, API security, and infrastructure resilience from day one.',
+    features: ['Application Security Audits', 'API & Infrastructure Hardening', 'Data Protection & Encryption', 'Secure Development Lifecycle'],
     icon: ShieldCheck,
   },
   {
-    id: 'data-analytics',
-    num: '06',
-    title: 'Data & Analytics',
-    shortDesc: 'Business intelligence, dashboards, data engineering and real-time insights.',
-    fullDesc: 'Transform raw data into actionable strategic insights with modern data lakes, real-time analytics pipelines, and interactive executive reporting dashboards.',
-    features: ['Data Warehousing & ETL', 'Executive BI Dashboards', 'Real-time Event Streaming', 'Data Governance & Hygiene'],
-    icon: BarChart3,
-  },
-  {
-    id: 'ui-ux-engineering',
-    num: '07',
-    title: 'UI/UX Engineering',
-    shortDesc: 'Modern digital experiences engineered around users, accessibility, and business metrics.',
-    fullDesc: 'Human-centered user experience research, design systems, and rapid prototyping that elevate brand perception and optimize conversion user journeys.',
-    features: ['User Research & Journey Mapping', 'Enterprise Design Systems', 'Interactive Web & Mobile Prototypes', 'Accessibility (WCAG 2.1) Audits'],
-    icon: Layout,
-  },
-  {
-    id: 'it-consulting',
+    id: 'software-management',
     num: '08',
-    title: 'IT Consulting',
-    shortDesc: 'Technology strategy, solution architecture and digital transformation advisory.',
-    fullDesc: 'Partnering with leadership teams to chart clear digital transformation roadmaps, evaluate technical stacks, optimize IT budgets, and mitigate project risk.',
-    features: ['Digital Transformation Strategy', 'Enterprise Architecture Blueprinting', 'Tech Stack Evaluation', 'RFP & Vendor Advisory'],
-    icon: Briefcase,
+    title: 'Software Maintenance & Management',
+    shortDesc: 'Continuous maintenance, monitoring, security updates and ongoing software management.',
+    fullDesc: 'We don\'t just build software and leave it behind. We continuously maintain, monitor, secure, optimize, and improve software applications after deployment.',
+    features: ['Application Health Monitoring', 'Performance Optimization', 'Security Patching & Updates', 'Ongoing Feature Upgrades'],
+    icon: BarChart3,
   },
 ];
 
@@ -115,19 +115,19 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
           <div className="max-w-2xl">
             <div className="text-xs font-bold tracking-[0.25em] text-gold-dark uppercase mb-3 flex items-center gap-2">
               <span className="w-8 h-[2px] bg-gold-DEFAULT" />
-              <span>CAPABILITIES</span>
+              <span>CUSTOM SOFTWARE ENGINEERING</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-DEFAULT font-heading tracking-tight">
-              Our Technology Capabilities
+              Software Built Around Your Business
             </h2>
             <p className="text-base sm:text-lg text-slate-600 font-sans mt-4">
-              From strategy to engineering, we build digital systems designed for real-world business.
+              Every business works differently. We build custom software around your processes, people and goals — from individual applications to complete enterprise platforms.
             </p>
           </div>
 
           <div className="flex items-center gap-2 bg-brand-bg p-1.5 rounded-lg border border-slate-200">
             <span className="text-xs font-semibold text-slate-500 px-3">
-              8 Enterprise Core Domains
+              Full Software Lifecycle
             </span>
           </div>
         </div>

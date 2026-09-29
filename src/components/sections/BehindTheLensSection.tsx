@@ -26,24 +26,23 @@ export const BehindTheLensSection: React.FC = () => {
         {/* Header */}
         <div className="mb-[50px]">
           <span className="bg-[#f4f4f4] rounded-[8px] text-[13px] px-3 py-1 font-medium text-[#666] inline-block mb-3">
-            Blog
+            Technology Insights
           </span>
           <h2
             className="text-[64px] max-[768px]:text-[48px] font-medium leading-[1.05] tracking-[-2.5px] text-neutral-900 mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Behind the lens
+            Insights & Tech Perspectives
           </h2>
           <div className="flex justify-between items-end gap-6 max-[768px]:flex-col max-[768px]:items-start max-[768px]:gap-4">
             <p className="max-w-[480px] text-[#666] text-[18px] font-medium opacity-80 leading-relaxed">
-              Thoughts, insights, and stories from my photography journey. Take a
-              peek into my creative process and recent projects.
+              Architectural insights, technical perspectives, and operational guides on enterprise software development, AI integration, ERP systems, and cloud engineering.
             </p>
             <button
               type="button"
               className="bg-black text-white rounded-[40px] text-[14px] font-semibold py-3 px-6 transition-transform duration-200 hover:scale-[1.02] cursor-pointer whitespace-nowrap"
             >
-              View all posts
+              Explore All Insights
             </button>
           </div>
         </div>

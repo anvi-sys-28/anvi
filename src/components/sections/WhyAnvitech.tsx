@@ -7,32 +7,32 @@ export const WhyAnvitech: React.FC = () => {
   const principles = [
     {
       num: '01',
-      title: 'Engineering Excellence',
-      desc: 'We enforce rigorous peer code reviews, continuous automated testing, clean architecture principles, and zero-compromise security protocols.',
+      title: 'Software Maintenance',
+      desc: 'Keep applications stable, compatible, and up to date with continuous dependency and system management as your business grows.',
       icon: Award,
     },
     {
       num: '02',
-      title: 'Business-First Thinking',
-      desc: 'Technology is a vehicle for value. We align every sprint, architecture choice, and feature directly with your commercial KPIs.',
-      icon: Target,
-    },
-    {
-      num: '03',
-      title: 'Scalable Architecture',
-      desc: 'Our designs handle exponential traffic growth without requiring costly structural overhauls, ensuring high return on tech investments.',
+      title: 'Proactive Monitoring',
+      desc: 'Identify operational bottlenecks, system health issues, and performance anomalies early before they affect business operations.',
       icon: Cpu,
     },
     {
+      num: '03',
+      title: 'Security Management',
+      desc: 'Continuously audit and improve application, API, and cloud infrastructure security against emerging vulnerabilities and threats.',
+      icon: Target,
+    },
+    {
       num: '04',
-      title: 'Long-Term Partnership',
-      desc: 'We do not just ship code and disappear. We serve as an extended engineering arm, offering continuous evolution and strategy.',
+      title: 'Optimization & Scaling',
+      desc: 'Improve system response times, database query performance, throughput, and cloud infrastructure efficiency continuously.',
       icon: Handshake,
     },
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-navy-DEFAULT text-white relative overflow-hidden">
+    <section id="management" className="py-24 lg:py-32 bg-navy-DEFAULT text-white relative overflow-hidden">
       
       {/* Background Subtle Monogram Line Art */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
@@ -48,13 +48,13 @@ export const WhyAnvitech: React.FC = () => {
         <div className="max-w-3xl mb-16">
           <div className="text-xs font-bold tracking-[0.25em] text-gold-light uppercase mb-3 flex items-center gap-2">
             <span className="w-8 h-[2px] bg-gold-DEFAULT" />
-            <span>OUR CORE DIFFERENCE</span>
+            <span>SOFTWARE LIFECYCLE MANAGEMENT</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight mb-6">
-            Why Businesses Choose ANVITECH
+            We Build It. We Manage It. We Improve It.
           </h2>
           <p className="text-base sm:text-lg text-slate-300 font-sans">
-            We bridge high-level corporate strategy with rock-solid technology execution.
+            Software doesn't stop at deployment. We provide ongoing maintenance, monitoring, improvements, integrations, security updates and technical support to keep your systems reliable as your business evolves.
           </p>
         </div>
 

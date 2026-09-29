@@ -12,9 +12,9 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onExploreSolutions, onTalkToTeam }) => {
   const capabilities = [
     { num: '/01', label: 'SOFTWARE DEVELOPMENT', target: 'services' },
-    { num: '/02', label: 'AI & AUTOMATION', target: 'services' },
-    { num: '/03', label: 'CLOUD & DEVOPS', target: 'services' },
-    { num: '/04', label: 'CYBERSECURITY', target: 'services' },
+    { num: '/02', label: 'AI & AUTOMATION', target: 'solutions' },
+    { num: '/03', label: 'ERP, CRM & LOGISTICS', target: 'solutions' },
+    { num: '/04', label: 'CLOUD & DEVOPS', target: 'services' },
   ];
 
   const handleCapabilityClick = (targetId: string) => {
@@ -67,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreSolutions, onTalkToTeam }) 
                 transition={{ duration: 0.9, delay: 0.15, ease: easeCurve }}
                 className="text-lg sm:text-2xl lg:text-3xl font-bold font-heading text-white tracking-tight leading-snug"
               >
-                Empowering businesses with intelligent <span className="text-gold-light">AI solutions</span> that simplify work and accelerate growth.
+                Building technology that moves <span className="text-gold-light">businesses forward</span>.
               </motion.h2>
 
               <motion.p
@@ -76,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreSolutions, onTalkToTeam }) 
                 transition={{ duration: 0.9, delay: 0.3, ease: easeCurve }}
                 className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed tracking-wide"
               >
-                We design and deploy custom artificial intelligence, intelligent RPA automation, and scalable cloud platforms—helping organizations streamline complex operations and make everyday work effortlessly efficient.
+                From custom software and enterprise platforms to AI-powered solutions, automation, ERP, CRM and logistics systems, ANVITECH INDIA builds and manages technology around the way your business works.
               </motion.p>
             </div>
 
@@ -143,7 +143,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreSolutions, onTalkToTeam }) 
             className="lg:col-span-5 flex flex-col justify-end text-left lg:text-right items-start lg:items-end pb-1"
           >
             <p className="text-[11px] sm:text-xs lg:text-sm text-slate-300 font-sans leading-relaxed tracking-wide max-w-lg">
-              We craft thoughtful <strong className="text-white font-bold">digital solutions</strong> and enterprise software platforms that help businesses <strong className="text-gold-light font-bold">stand out</strong>, build trust, and grow with <strong className="text-white font-bold">confidence</strong>.
+              ANVITECH INDIA builds and manages technology that helps businesses <strong className="text-white font-bold">operate, automate and grow</strong>. From requirements to production, we handle the <strong className="text-gold-light font-bold">complete technology lifecycle</strong>.
             </p>
           </motion.div>
 

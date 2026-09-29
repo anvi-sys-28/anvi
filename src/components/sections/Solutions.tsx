@@ -26,65 +26,56 @@ export interface SolutionItem {
 
 export const solutionsData: SolutionItem[] = [
   {
-    id: 'digital-transformation',
-    title: 'Digital Transformation',
-    subtitle: 'End-to-End Modernization',
-    description: 'Re-engineer core operations with cloud-native architectures, legacy app refactoring, and digital-first customer channels.',
-    benefits: ['40% Faster Time-to-Market', 'Legacy Risk Reduction', 'Omnichannel Customer Experience'],
-    visualType: 'transformation',
-    icon: Workflow,
-  },
-  {
-    id: 'enterprise-applications',
-    title: 'Enterprise Applications',
-    subtitle: 'Mission-Critical Core Systems',
-    description: 'High-concurrency ERP, CRM, and custom operational platforms designed for fault-tolerant performance and regulatory compliance.',
-    benefits: ['Multi-Tenant Architecture', 'Real-time ERP Synchronization', 'Role-Based Access Control'],
-    visualType: 'enterprise',
-    icon: Layers,
-  },
-  {
-    id: 'business-automation',
-    title: 'Business Automation',
-    subtitle: 'Intelligent Process Optimization',
-    description: 'Eliminate manual bottlenecks with automated workflows, intelligent document capture, and self-healing system integrations.',
-    benefits: ['60% Reduced Manual Overhead', 'Audit Trail Compliance', 'Automated Exception Handling'],
-    visualType: 'automation',
-    icon: GitBranch,
-  },
-  {
-    id: 'ai-powered-solutions',
-    title: 'AI-Powered Solutions',
-    subtitle: 'Domain-Trained Intelligence',
-    description: 'Deploy custom Machine Learning models, natural language assistants, and predictive decision-support systems built on proprietary data.',
-    benefits: ['Predictive Demand Forecasting', 'Custom LLM Agents', 'Automated Fraud Detection'],
+    id: 'ai-solutions-agents',
+    title: 'AI Solutions & Agents',
+    subtitle: 'Turn AI Into a Business Capability',
+    description: 'We build practical AI solutions and intelligent agents that help businesses automate work, process information, assist teams and create intelligent digital experiences.',
+    benefits: ['AI Agents & Autonomous Assistants', 'AI Automation & Intelligent Workflows', 'AI Integration into ERP & CRM', 'AI-Powered Predictive Analytics'],
     visualType: 'ai',
     icon: Cpu,
   },
   {
-    id: 'cloud-transformation',
-    title: 'Cloud Transformation',
-    subtitle: 'Resilient Multi-Cloud Foundations',
-    description: 'Migrate and optimize workloads across AWS, Azure, and private clouds with zero data loss and automated cost control.',
-    benefits: ['99.99% Uptime SLA', 'Auto-scaling Infrastructure', 'Infra-as-Code Automation'],
+    id: 'erp-solutions',
+    title: 'ERP Solutions',
+    subtitle: 'Connected Business Operations',
+    description: 'Custom ERP systems engineered to manage inventory, finance, purchasing, sales, HR, operations, multi-branch management and reporting.',
+    benefits: ['Inventory & Warehouse Sync', 'Finance & Procurement Automation', 'Multi-Branch Operations Engine', 'Executive Reporting & Analytics'],
+    visualType: 'enterprise',
+    icon: Layers,
+  },
+  {
+    id: 'crm-solutions',
+    title: 'CRM Solutions',
+    subtitle: 'Customer & Pipeline Management',
+    description: 'Tailored CRM platforms built for managing leads, customer communications, sales pipelines, automated follow-ups, and customer support.',
+    benefits: ['Lead & Sales Pipeline Tracking', 'Automated Follow-up Workflows', 'Customer Support Ticket Hub', 'Real-Time Sales Performance Analytics'],
+    visualType: 'transformation',
+    icon: Workflow,
+  },
+  {
+    id: 'logistics-management',
+    title: 'Logistics Management Software',
+    subtitle: 'Technology for Smarter Logistics',
+    description: 'Connect orders, deliveries, fleets, warehouses and dispatch operations through software built for modern logistics and supply-chain enterprises.',
+    benefits: ['Fleet & Driver Management', 'Order Tracking & Route Planning', 'Warehouse Operations Control', 'Supply Chain & Logistics Analytics'],
+    visualType: 'automation',
+    icon: GitBranch,
+  },
+  {
+    id: 'cloud-devops',
+    title: 'Cloud & DevOps',
+    subtitle: 'From Development to Production',
+    description: 'Deploy and manage applications on reliable cloud infrastructure with CI/CD automation, monitoring, backups, security and elastic scalability.',
+    benefits: ['Cloud Infrastructure Management', 'Automated CI/CD Pipelines', 'Performance & DB Optimization', 'High Availability & Scaling'],
     visualType: 'cloud',
     icon: CloudLightning,
   },
   {
-    id: 'data-intelligence',
-    title: 'Data Intelligence',
-    subtitle: 'Turn Big Data into Business Value',
-    description: 'Construct real-time streaming data pipelines, centralized data lakes, and executive decision dashboards.',
-    benefits: ['Sub-Second Query Speeds', 'Executive BI Reports', 'Unified Customer 360 View'],
-    visualType: 'data',
-    icon: Database,
-  },
-  {
-    id: 'cybersecurity-solutions',
-    title: 'Cybersecurity Solutions',
-    subtitle: 'Zero Trust Protection Strategy',
-    description: 'Proactive threat monitoring, identity governance, end-point encryption, and automated vulnerability remediations.',
-    benefits: ['ISO 27001 & SOC2 Compliant', 'Zero Trust Architecture', 'Real-Time Threat Prevention'],
+    id: 'cybersecurity',
+    title: 'Cybersecurity',
+    subtitle: 'Security Built Into Your Technology',
+    description: 'Help businesses operate software with security considered throughout the application and cloud infrastructure lifecycle.',
+    benefits: ['Application & API Security', 'Infrastructure Security & Hardening', 'Data Protection & Encryption', 'Continuous Vulnerability Assessment'],
     visualType: 'security',
     icon: Shield,
   },
@@ -115,10 +106,10 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution }) => {
             <span>ENTERPRISE SOLUTIONS</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-white mb-6">
-            Solutions Designed Around Real Business Challenges
+            Connected Systems for Connected Businesses
           </h2>
           <p className="text-slate-300 text-base sm:text-lg font-sans">
-            Modular, enterprise-grade technology frameworks tailored to transform operational friction into competitive advantage.
+            Bring your business operations, customers, logistics, and data together through software engineered around your organization's workflows.
           </p>
         </div>
 
