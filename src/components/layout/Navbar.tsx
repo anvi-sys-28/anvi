@@ -45,9 +45,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
     }
   };
 
+  const handleStartProjectClick = () => {
+    setMobileMenuOpen(false);
+    if (onOpenContactModal) {
+      onOpenContactModal();
+    } else {
+      const contactEl = document.getElementById('contact');
+      if (contactEl) {
+        const offsetTop = contactEl.offsetTop - 80;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    }
+  };
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled || theme === 'light'
           ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/90 py-3 shadow-md text-slate-900'
           : 'bg-navy-DEFAULT/90 backdrop-blur-md py-4 border-b border-white/10 text-white'
@@ -56,14 +72,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
       <div className="max-w-[1700px] mx-auto px-4 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Left: Brand Logo & Menu Trigger */}
+          {/* Left: MENU Trigger & Brand Logo */}
           <div className="flex items-center gap-4 sm:gap-6">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`flex items-center gap-2 text-xs font-mono tracking-widest uppercase group transition-colors cursor-pointer ${
                 scrolled || theme === 'light'
                   ? 'text-navy-DEFAULT hover:text-orange-600'
-                  : 'text-white/90 hover:text-gold-light'
+                  : 'text-white/90 hover:text-orange-400'
               }`}
               aria-label="Toggle Menu"
             >
@@ -72,57 +88,57 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
               ) : (
                 <Grid className="w-4 h-4 text-orange-500 group-hover:rotate-90 transition-transform duration-300" />
               )}
-              <span className="font-semibold hidden sm:inline">{mobileMenuOpen ? 'CLOSE' : 'MENU'}</span>
+              <span className="font-semibold">{mobileMenuOpen ? 'CLOSE' : 'MENU'}</span>
             </button>
 
             <span className={`hidden sm:inline-block font-mono ${scrolled || theme === 'light' ? 'text-slate-300' : 'text-white/30'}`}>—</span>
 
-            {/* Brand Logo */}
+            {/* Brand Logo Lockup */}
             <Link href="/" className="flex items-center gap-2">
               <Logo variant={scrolled || theme === 'light' ? 'light' : 'dark'} size="sm" />
             </Link>
           </div>
 
           {/* Center: Inline Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-xs font-medium font-sans">
+          <nav className="hidden lg:flex items-center gap-8 text-xs font-mono tracking-widest uppercase font-extrabold">
             <Link
               href="/"
-              className={`transition-colors hover:text-orange-500 font-semibold ${
-                scrolled || theme === 'light' ? 'text-slate-800' : 'text-slate-200'
+              className={`transition-colors ${
+                scrolled || theme === 'light' ? 'text-navy-DEFAULT hover:text-orange-600' : 'text-slate-200 hover:text-orange-400'
               }`}
             >
               Home
             </Link>
 
-            {/* SERVICES DROPDOWN */}
+            {/* Services Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setServicesDropdownOpen(true)}
               onMouseLeave={() => setServicesDropdownOpen(false)}
             >
-              <button
-                type="button"
-                className={`flex items-center gap-1 transition-colors hover:text-orange-500 font-semibold cursor-pointer py-2 ${
-                  scrolled || theme === 'light' ? 'text-slate-800' : 'text-slate-200'
+              <Link
+                href="/services"
+                className={`flex items-center gap-1 transition-colors py-2 ${
+                  scrolled || theme === 'light' ? 'text-navy-DEFAULT hover:text-orange-600' : 'text-slate-200 hover:text-orange-400'
                 }`}
               >
                 <span>Services</span>
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180 text-orange-500' : ''}`} />
-              </button>
+              </Link>
 
-              {/* Dropdown Menu List */}
+              {/* Dropdown Card */}
               {servicesDropdownOpen && (
-                <div className="absolute top-full left-0 w-[580px] bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-5 grid grid-cols-2 gap-3 animate-in fade-in slide-in-from-top-2 duration-200 text-slate-900">
-                  <div className="col-span-2 pb-2 mb-1 border-b border-slate-100 flex items-center justify-between">
+                <div className="absolute top-full left-0 w-[540px] bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 grid grid-cols-2 gap-3 text-slate-900 normal-case tracking-normal z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="col-span-2 pb-2 border-b border-slate-100 flex items-center justify-between">
                     <span className="text-[11px] font-mono font-bold tracking-widest text-orange-600 uppercase">
-                      CORPORATE SERVICE PORTFOLIO
+                      CORPORATE SERVICES
                     </span>
                     <Link
                       href="/services"
                       onClick={() => setServicesDropdownOpen(false)}
                       className="text-xs font-bold text-navy-DEFAULT hover:text-orange-600 flex items-center gap-1"
                     >
-                      <span>View All Portfolio</span>
+                      <span>View All</span>
                       <ArrowUpRight className="w-3.5 h-3.5 text-orange-500" />
                     </Link>
                   </div>
@@ -134,16 +150,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
                         key={service.slug}
                         href={`/services/${service.slug}`}
                         onClick={() => setServicesDropdownOpen(false)}
-                        className="group flex items-start gap-3 p-3 rounded-xl hover:bg-orange-50/80 transition-all border border-transparent hover:border-orange-200/60"
+                        className="group flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-orange-50 transition-colors border border-transparent hover:border-orange-200/60"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-navy-DEFAULT/5 text-navy-DEFAULT group-hover:bg-orange-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
-                          <IconComp className="w-4 h-4" />
+                        <div className="w-7 h-7 rounded-lg bg-navy-DEFAULT/5 text-navy-DEFAULT group-hover:bg-orange-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors mt-0.5">
+                          <IconComp className="w-3.5 h-3.5" />
                         </div>
                         <div>
                           <div className="text-xs font-bold text-slate-900 group-hover:text-orange-600 transition-colors leading-snug">
                             {service.title}
                           </div>
-                          <div className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
+                          <div className="text-[10px] text-slate-500 line-clamp-1 mt-0.5">
                             {service.subtitle}
                           </div>
                         </div>
@@ -155,19 +171,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
             </div>
 
             <a
-              href="#contact"
-              onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }}
-              className={`transition-colors hover:text-orange-500 font-semibold ${
-                scrolled || theme === 'light' ? 'text-slate-800' : 'text-slate-200'
+              href="#trust-intro"
+              onClick={(e) => { e.preventDefault(); handleNavClick('#trust-intro'); }}
+              className={`transition-colors ${
+                scrolled || theme === 'light' ? 'text-navy-DEFAULT hover:text-orange-600' : 'text-slate-200 hover:text-orange-400'
               }`}
             >
-              About Us
+              Who We Are
             </a>
 
             <Link
               href="/services"
-              className={`transition-colors hover:text-orange-500 font-semibold ${
-                scrolled || theme === 'light' ? 'text-slate-800' : 'text-slate-200'
+              className={`transition-colors ${
+                scrolled || theme === 'light' ? 'text-navy-DEFAULT hover:text-orange-600' : 'text-slate-200 hover:text-orange-400'
               }`}
             >
               Portfolio
@@ -176,16 +192,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }}
-              className={`transition-colors hover:text-orange-500 font-semibold ${
-                scrolled || theme === 'light' ? 'text-slate-800' : 'text-slate-200'
+              className={`transition-colors ${
+                scrolled || theme === 'light' ? 'text-navy-DEFAULT hover:text-orange-600' : 'text-slate-200 hover:text-orange-400'
               }`}
             >
               Contact
             </a>
           </nav>
 
-          {/* Right: Theme Switcher + Login / Contact / Consultation Buttons (Matching screenshot) */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          {/* Right: Theme Switcher + Restored Original START PROJECT Button */}
+          <div className="flex items-center gap-3">
             {/* Theme Toggle Button */}
             <button
               type="button"
@@ -193,7 +209,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
               className={`p-2 rounded-full transition-colors cursor-pointer ${
                 scrolled || theme === 'light'
                   ? 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                  : 'bg-white/10 text-gold-light hover:bg-white/20'
+                  : 'bg-white/10 text-amber-400 hover:bg-white/20'
               }`}
               title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Theme`}
               aria-label="Switch Theme"
@@ -205,97 +221,117 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
               )}
             </button>
 
-            {/* Login Button */}
+            {/* Original START PROJECT Rectangular Button */}
             <button
               type="button"
-              onClick={onOpenContactModal || (() => handleNavClick('#contact'))}
-              className={`hidden sm:inline-flex items-center px-4 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer ${
+              onClick={handleStartProjectClick}
+              className={`relative inline-flex items-center justify-center px-6 py-2.5 text-xs font-mono tracking-widest uppercase rounded-sm transition-all duration-300 shadow-md active:scale-95 cursor-pointer border ${
                 scrolled || theme === 'light'
-                  ? 'border-slate-300 text-slate-800 hover:bg-slate-100'
-                  : 'border-white/20 text-white hover:bg-white/10'
+                  ? 'bg-navy-DEFAULT text-white hover:bg-orange-600 border-navy-DEFAULT'
+                  : 'bg-white text-navy-DEFAULT hover:bg-orange-500 hover:text-white border-white font-black'
               }`}
             >
-              Login
-            </button>
-
-            {/* Contact Us Button */}
-            <button
-              type="button"
-              onClick={onOpenContactModal || (() => handleNavClick('#contact'))}
-              className={`hidden md:inline-flex items-center px-4 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer ${
-                scrolled || theme === 'light'
-                  ? 'border-navy-DEFAULT text-navy-DEFAULT hover:bg-navy-DEFAULT hover:text-white'
-                  : 'border-gold-DEFAULT text-gold-light hover:bg-gold-DEFAULT hover:text-navy-DEFAULT'
-              }`}
-            >
-              Contact Us
-            </button>
-
-            {/* Free Consultation Button (Orange Action Button) */}
-            <button
-              type="button"
-              onClick={onOpenContactModal || (() => handleNavClick('#contact'))}
-              className="inline-flex items-center px-4 py-2 text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 rounded-lg shadow-md hover:shadow-orange-500/20 transition-all cursor-pointer whitespace-nowrap"
-            >
-              Free Consultation
+              <span className="font-black tracking-widest">
+                START PROJECT
+              </span>
             </button>
           </div>
 
         </div>
       </div>
 
-      {/* Full-Screen Overlay Menu (Mobile) */}
+      {/* Full-Screen Blur Overlay Menu (Restored Original Blur Overlay & Clean Structure) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[60px] bg-navy-DEFAULT/98 backdrop-blur-2xl z-40 flex flex-col justify-between p-6 sm:p-10 border-t border-white/10 animate-in fade-in duration-200">
-          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 gap-6 pt-4">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-mono tracking-widest text-orange-500 uppercase">
-                PORTFOLIO & NAVIGATION
-              </span>
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-1 text-slate-400 hover:text-white cursor-pointer"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <div className="grid grid-cols-1 gap-3 max-h-[60vh] overflow-y-auto">
-              <Link
-                href="/"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-bold text-white py-2 border-b border-white/10"
-              >
-                Home
+        <div className="fixed inset-0 z-50 bg-navy-DEFAULT/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-12 overflow-y-auto animate-in fade-in duration-300 text-white">
+          <div className="max-w-7xl mx-auto w-full">
+            
+            {/* Top Bar inside Full Overlay */}
+            <div className="flex items-center justify-between pb-8 border-b border-white/10">
+              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                <Logo variant="dark" size="sm" />
               </Link>
-              <div className="text-xs font-mono font-bold text-gold-light uppercase pt-2">
-                Services Portfolio
-              </div>
-              {servicesList.map((srv) => (
-                <Link
-                  key={srv.slug}
-                  href={`/services/${srv.slug}`}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-semibold text-slate-300 hover:text-orange-400 py-1.5 pl-3 border-l-2 border-orange-500"
-                >
-                  {srv.title}
-                </Link>
-              ))}
-            </div>
 
-            <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
               <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  const contactEl = document.getElementById('contact');
-                  contactEl?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="w-full py-3 bg-orange-600 text-white font-bold text-xs tracking-wider uppercase rounded-lg shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-white/90 hover:text-orange-400 cursor-pointer bg-white/10 px-4 py-2 rounded-full border border-white/10 transition-colors"
+                aria-label="Close menu"
               >
-                <span>Request Free Consultation</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <X className="w-4 h-4 text-orange-400" />
+                <span className="font-semibold">CLOSE</span>
               </button>
             </div>
+
+            {/* Overlay Body Content */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-8">
+              
+              {/* Left Column: Navigation Links */}
+              <div className="flex flex-col gap-2">
+                <div className="text-xs font-mono tracking-[0.25em] text-orange-400 uppercase mb-4 font-bold">
+                  NAVIGATION
+                </div>
+                {[
+                  { name: 'Home', href: '/' },
+                  { name: 'Services', href: '/services' },
+                  { name: 'Who We Are', href: '#trust-intro' },
+                  { name: 'Portfolio', href: '/services' },
+                  { name: 'Contact', href: '#contact' },
+                ].map((link, idx) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      if (link.href.startsWith('#')) {
+                        const el = document.getElementById(link.href.replace('#', ''));
+                        el?.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    className="flex items-center justify-between text-xl sm:text-2xl font-bold font-heading text-slate-100 hover:text-orange-400 py-3.5 border-b border-white/10 transition-colors group"
+                  >
+                    <span>{link.name}</span>
+                    <span className="text-xs font-mono text-slate-500 group-hover:text-orange-400">
+                      /0{idx + 1}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Right Column: Direct Contact Info Card */}
+              <div className="flex flex-col justify-between bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md">
+                <div>
+                  <div className="text-xs font-mono tracking-[0.25em] text-orange-400 uppercase mb-3 font-bold">
+                    DIRECT CONTACT
+                  </div>
+                  <h3 className="text-2xl font-bold text-white font-heading mb-4">
+                    ANVITECH INDIA PRIVATE LIMITED
+                  </h3>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-6 font-sans">
+                    Ready to engineer your digital future? Reach out to our technology advisors today.
+                  </p>
+                  <div className="space-y-3 text-xs font-mono text-slate-300">
+                    <div className="flex items-center gap-2">
+                      <span className="text-orange-400 font-bold">EMAIL:</span> contact@anvitech.in
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-orange-400 font-bold">PHONE:</span> +91 (080) 4567 8900
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-orange-400 font-bold">LOCATION:</span> Bengaluru, India
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  onClick={handleStartProjectClick}
+                  className="mt-8 w-full py-4 bg-orange-600 hover:bg-orange-700 text-white font-mono font-extrabold text-xs tracking-widest uppercase rounded-lg shadow-lg flex items-center justify-center gap-2 transition-all cursor-pointer"
+                >
+                  <span>START PROJECT</span>
+                  <ArrowUpRight className="w-4 h-4 text-white stroke-[2.5]" />
+                </button>
+              </div>
+
+            </div>
+
           </div>
         </div>
       )}
