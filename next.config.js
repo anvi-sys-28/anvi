@@ -5,6 +5,13 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com'],
   },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.html$/,
+      type: 'asset/source',
+    });
+    return config;
+  },
 }
 
 module.exports = nextConfig
