@@ -49,6 +49,11 @@ export const metadata: Metadata = {
     title: 'ANVITECH INDIA PRIVATE LIMITED',
     description: 'Technology That Moves Businesses Forward.',
   },
+  icons: {
+    icon: '/nl.webp',
+    shortcut: '/nl.webp',
+    apple: '/nl.webp',
+  },
   robots: {
     index: true,
     follow: true,
@@ -66,6 +71,9 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${inter.variable} ${dmSerifDisplay.variable} scroll-smooth`}
     >
       <head>
+        <link rel="icon" href="/nl.webp" type="image/webp" />
+        <link rel="shortcut icon" href="/nl.webp" type="image/webp" />
+        <link rel="apple-touch-icon" href="/nl.webp" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
