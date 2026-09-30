@@ -79,9 +79,13 @@ export const metadata: Metadata = {
     images: ['https://www.anvitechindia.com/nl.webp'],
   },
   icons: {
-    icon: '/nl.webp',
-    shortcut: '/nl.webp',
-    apple: '/nl.webp',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/nl.webp', type: 'image/webp' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    shortcut: ['/favicon.ico', '/nl.webp'],
+    apple: [{ url: '/apple-touch-icon.png' }, { url: '/nl.webp' }],
   },
   verification: {
     google: '9A-Qhj3vyoNEImMogsdWQtMU9GOKTvHGNnblN3M4H6E',
@@ -111,8 +115,11 @@ export default function RootLayout({
     >
       <head>
         <meta name="google-site-verification" content="9A-Qhj3vyoNEImMogsdWQtMU9GOKTvHGNnblN3M4H6E" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/nl.webp" type="image/webp" />
-        <link rel="shortcut icon" href="/nl.webp" type="image/webp" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="apple-touch-icon" href="/nl.webp" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
