@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
+import { useTheme } from '@/context/ThemeContext';
 
 interface FaqItem {
   question: string;
@@ -40,6 +41,8 @@ const faqData: FaqItem[] = [
 export const CtaFaqFooterSection: React.FC = () => {
   const [isBtnHovered, setIsBtnHovered] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
 
   const toggleFaq = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -53,7 +56,9 @@ export const CtaFaqFooterSection: React.FC = () => {
   return (
     <div
       id="contact"
-      className="bg-white text-neutral-900 w-full"
+      className={`w-full transition-colors duration-300 ${
+        isDark ? 'bg-black text-white' : 'bg-white text-neutral-900'
+      }`}
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       {/* Main Section containing CTA + FAQ */}
@@ -100,24 +105,31 @@ export const CtaFaqFooterSection: React.FC = () => {
                 <div
                   key={index}
                   onClick={() => toggleFaq(index)}
-                  className="bg-white border rounded-[10px] py-[18px] px-5 cursor-pointer transition-all duration-200 hover:border-[#eaeaea]"
+                  className={`border rounded-[10px] py-[18px] px-5 cursor-pointer transition-all duration-200 ${
+                    isDark
+                      ? 'bg-neutral-900/90 border-neutral-800 text-white hover:border-neutral-700'
+                      : 'bg-white border-[#f0f0f0] text-neutral-900 hover:border-[#eaeaea]'
+                  }`}
                   style={{
-                    borderColor: isActive ? '#eaeaea' : '#f0f0f0',
                     boxShadow: isActive
-                      ? '0 4px 12px rgba(0,0,0,0.04)'
-                      : '0 2px 8px rgba(0,0,0,0.02)',
+                      ? isDark ? '0 4px 12px rgba(0,0,0,0.4)' : '0 4px 12px rgba(0,0,0,0.04)'
+                      : isDark ? '0 2px 8px rgba(0,0,0,0.2)' : '0 2px 8px rgba(0,0,0,0.02)',
                   }}
                 >
-                  <div className="flex justify-between items-center font-normal text-[0.9rem] text-neutral-900">
+                  <div className={`flex justify-between items-center font-semibold text-[0.9rem] ${
+                    isDark ? 'text-white' : 'text-neutral-900'
+                  }`}>
                     <span>{item.question}</span>
                     {isActive ? (
-                      <ChevronUp size={20} />
+                      <ChevronUp size={20} className={isDark ? 'text-gold-DEFAULT' : ''} />
                     ) : (
-                      <ChevronDown size={20} />
+                      <ChevronDown size={20} className={isDark ? 'text-slate-400' : ''} />
                     )}
                   </div>
                   {isActive && (
-                    <div className="mt-3 text-[0.9rem] text-[#666] leading-[1.6]">
+                    <div className={`mt-3 text-[0.9rem] leading-[1.6] ${
+                      isDark ? 'text-slate-300' : 'text-[#666]'
+                    }`}>
                       {item.answer}
                     </div>
                   )}
@@ -129,22 +141,28 @@ export const CtaFaqFooterSection: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#fafafa] pt-20 pb-5 max-[900px]:pt-[60px]">
+      <footer className={`pt-20 pb-5 max-[900px]:pt-[60px] border-t transition-colors ${
+        isDark ? 'bg-neutral-950 border-neutral-800 text-slate-300' : 'bg-[#fafafa] border-[#f0f0f0] text-neutral-900'
+      }`}>
         <div className="max-w-[1100px] w-full mx-auto px-5">
           <div className="grid grid-cols-[2fr_1fr_1fr_2fr] gap-10 mb-[50px] max-[900px]:grid-cols-2 max-[480px]:grid-cols-1">
             {/* 1. Logo column */}
             <div>
               <div className="mb-[15px]">
-                <Logo variant="light" size="sm" />
+                <Logo variant={isDark ? 'dark' : 'light'} size="sm" />
               </div>
-              <p className="text-[0.85rem] text-[#666] leading-[1.6] max-w-[240px]">
+              <p className={`text-[0.85rem] leading-[1.6] max-w-[240px] ${
+                isDark ? 'text-slate-400' : 'text-[#666]'
+              }`}>
                 ANVITECH INDIA PRIVATE LIMITED builds and manages technology that helps businesses operate, automate and grow.
               </p>
             </div>
 
             {/* 2. Services Navigation */}
             <div>
-              <h4 className="font-semibold mb-5 text-[0.95rem] text-neutral-900">
+              <h4 className={`font-semibold mb-5 text-[0.95rem] ${
+                isDark ? 'text-white' : 'text-neutral-900'
+              }`}>
                 Services
               </h4>
               <ul>
@@ -153,7 +171,9 @@ export const CtaFaqFooterSection: React.FC = () => {
                     <li key={idx} className="mb-3">
                       <a
                         href="#services"
-                        className="text-[#888] no-underline text-[0.85rem] transition-colors duration-200 hover:text-neutral-900"
+                        className={`no-underline text-[0.85rem] transition-colors duration-200 ${
+                          isDark ? 'text-slate-400 hover:text-white' : 'text-[#888] hover:text-neutral-900'
+                        }`}
                       >
                         {linkText}
                       </a>
@@ -165,7 +185,9 @@ export const CtaFaqFooterSection: React.FC = () => {
 
             {/* 3. Company Navigation */}
             <div>
-              <h4 className="font-semibold mb-5 text-[0.95rem] text-neutral-900">
+              <h4 className={`font-semibold mb-5 text-[0.95rem] ${
+                isDark ? 'text-white' : 'text-neutral-900'
+              }`}>
                 Company
               </h4>
               <ul>
@@ -173,7 +195,9 @@ export const CtaFaqFooterSection: React.FC = () => {
                   <li key={idx} className="mb-3">
                     <a
                       href="#home"
-                      className="text-[#888] no-underline text-[0.85rem] transition-colors duration-200 hover:text-neutral-900"
+                      className={`no-underline text-[0.85rem] transition-colors duration-200 ${
+                        isDark ? 'text-slate-400 hover:text-white' : 'text-[#888] hover:text-neutral-900'
+                      }`}
                     >
                       {pageText}
                     </a>
@@ -184,20 +208,25 @@ export const CtaFaqFooterSection: React.FC = () => {
 
             {/* 4. Contact & Newsletter */}
             <div>
-              <h4 className="font-semibold mb-5 text-[0.95rem] text-neutral-900">
+              <h4 className={`font-semibold mb-5 text-[0.95rem] ${
+                isDark ? 'text-white' : 'text-neutral-900'
+              }`}>
                 Enterprise Contact
               </h4>
-              <p className="text-[0.85rem] text-[#666] mb-[15px] space-y-1">
-                <div>Bengaluru, India</div>
-                <div>support@anvitechindia.com</div>
-                <div>jashwanth@anvitechindia.com</div>
-                <div>shashank@anvitechindia.com</div>
+              <p className={`text-[0.85rem] mb-[15px] space-y-1 ${
+                isDark ? 'text-slate-400' : 'text-[#666]'
+              }`}>
+                <div>Bengaluru, India | support@anvitechindia.com</div>
               </p>
               <div className="flex gap-[10px]">
                 <input
                   type="email"
                   placeholder="Enter work email..."
-                  className="flex-grow border border-[#f0f0f0] bg-white outline-none transition-colors duration-200 focus:border-[#ccc] text-[0.9rem]"
+                  className={`flex-grow border outline-none transition-colors duration-200 text-[0.9rem] ${
+                    isDark
+                      ? 'bg-neutral-900 border-neutral-800 text-white placeholder:text-neutral-500 focus:border-neutral-600'
+                      : 'bg-white border-[#f0f0f0] text-neutral-900 placeholder:text-neutral-400 focus:border-[#ccc]'
+                  }`}
                   style={{
                     padding: '12px 16px',
                     borderRadius: '10px',
@@ -206,7 +235,9 @@ export const CtaFaqFooterSection: React.FC = () => {
                 />
                 <button
                   type="button"
-                  className="bg-neutral-900 text-white border-none font-semibold cursor-pointer transition-all duration-200 hover:-translate-y-0.5 text-[0.9rem]"
+                  className={`border-none font-semibold cursor-pointer transition-all duration-200 hover:-translate-y-0.5 text-[0.9rem] ${
+                    isDark ? 'bg-white text-black hover:bg-slate-200' : 'bg-neutral-900 text-white hover:bg-black'
+                  }`}
                   style={{
                     padding: '12px 24px',
                     borderRadius: '10px',
@@ -220,9 +251,16 @@ export const CtaFaqFooterSection: React.FC = () => {
           </div>
 
           {/* Bottom bar */}
-          <div className="border-t border-[#f0f0f0] pt-[25px] pb-[10px] flex justify-between text-[0.85rem] text-[#888] max-[480px]:flex-col max-[480px]:gap-[15px] max-[480px]:items-center">
-            <span>© 2026 ANVITECH INDIA PRIVATE LIMITED. All Rights Reserved.</span>
-            <span>Enterprise Software & Technology Engineering Partner</span>
+          <div className={`border-t pt-[25px] pb-[10px] flex justify-between text-[0.85rem] max-[480px]:flex-col max-[480px]:gap-[15px] max-[480px]:items-center ${
+            isDark ? 'border-neutral-800 text-slate-500' : 'border-[#f0f0f0] text-[#888]'
+          }`}>
+            <div>
+              &copy; {new Date().getFullYear()} ANVITECH INDIA PRIVATE LIMITED. All rights reserved.
+            </div>
+            <div className="flex gap-5">
+              <a href="#privacy" className={`hover:underline ${isDark ? 'hover:text-slate-300' : 'hover:text-neutral-900'}`}>Privacy Policy</a>
+              <a href="#terms" className={`hover:underline ${isDark ? 'hover:text-slate-300' : 'hover:text-neutral-900'}`}>Terms of Service</a>
+            </div>
           </div>
         </div>
       </footer>

@@ -4,8 +4,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Logo } from '@/components/ui/Logo';
-import { Grid, ArrowUpRight, X, ChevronDown } from 'lucide-react';
+import { Grid, ArrowUpRight, X, ChevronDown, Sun, Moon } from 'lucide-react';
 import { servicesList } from '@/lib/servicesData';
+import { useTheme } from '@/context/ThemeContext';
 
 interface NavbarProps {
   onOpenContactModal?: () => void;
@@ -258,6 +259,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
   const [activeOverlayTab, setActiveOverlayTab] = useState<'default' | 'solutions'>('solutions');
   
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
   const isServicesPage = pathname?.startsWith('/services');
   const isLightHeader = scrolled || isServicesPage;
 
@@ -409,8 +411,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
             </a>
           </nav>
 
-          {/* Right: START PROJECT Rectangular Button */}
-          <div className="flex items-center gap-4">
+          {/* Right: Theme Toggle & START PROJECT Button */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle Light / Dark Theme"
+              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              className={`p-2.5 rounded-lg transition-all duration-300 flex items-center justify-center border cursor-pointer active:scale-95 ${
+                isLightHeader
+                  ? 'border-slate-300 bg-slate-100 hover:bg-slate-200 text-slate-900 shadow-sm'
+                  : 'border-white/20 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm'
+              }`}
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-4 h-4 text-amber-400 fill-amber-400 animate-in fade-in zoom-in duration-200" />
+              ) : (
+                <Moon className="w-4 h-4 text-slate-800 fill-slate-800 animate-in fade-in zoom-in duration-200" />
+              )}
+            </button>
+
             <button
               onClick={onOpenContactModal || (() => {
                 const contactEl = document.getElementById('contact');
@@ -681,8 +700,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactModal }) => {
                   </p>
                   <div className="space-y-2 text-xs font-mono text-slate-400">
                     <div>EMAIL: support@anvitechindia.com</div>
-                    <div>EMAIL: jashwanth@anvitechindia.com</div>
-                    <div>EMAIL: shashank@anvitechindia.com</div>
                     <div>LOCATION: Bengaluru, India</div>
                   </div>
                 </div>

@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com'],
   },
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.html$/,

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Inter, DM_Serif_Display } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -161,7 +162,8 @@ export default function RootLayout({
                         '@type': 'Offer',
                         itemOffered: {
                           '@type': 'Service',
-                          name: 'Custom Software & ERP Development',
+                          name: 'Custom Software & Enterprise ERP Development',
+                          url: 'https://www.anvitechindia.com/services/custom-software-enterprise-erp-development',
                           description: 'Tailored enterprise ERP, CRM, and custom business management software.',
                         },
                       },
@@ -169,7 +171,17 @@ export default function RootLayout({
                         '@type': 'Offer',
                         itemOffered: {
                           '@type': 'Service',
+                          name: 'Web & Mobile Application Engineering',
+                          url: 'https://www.anvitechindia.com/services/web-mobile-application-engineering',
+                          description: 'Native iOS, Android, and web application engineering.',
+                        },
+                      },
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
                           name: 'AI Solutions & Autonomous Agents',
+                          url: 'https://www.anvitechindia.com/services/ai-solutions-chatbots-intelligent-automation',
                           description: 'Practical AI chatbots, voice assistants, and RPA workflow automation.',
                         },
                       },
@@ -178,6 +190,7 @@ export default function RootLayout({
                         itemOffered: {
                           '@type': 'Service',
                           name: 'Cloud Infrastructure & DevOps',
+                          url: 'https://www.anvitechindia.com/services/cloud-infrastructure-migration-devops',
                           description: 'AWS, Azure, GCP cloud migration, CI/CD automation, and Kubernetes.',
                         },
                       },
@@ -185,12 +198,89 @@ export default function RootLayout({
                         '@type': 'Offer',
                         itemOffered: {
                           '@type': 'Service',
-                          name: 'Cybersecurity & Managed Maintenance (AMC)',
-                          description: 'Security auditing, penetration testing, and 24/7 software AMC support.',
+                          name: 'Cybersecurity, Threat Monitoring & SOC',
+                          url: 'https://www.anvitechindia.com/services/cybersecurity-threat-monitoring-soc',
+                          description: 'Vulnerability audits, penetration testing, and zero trust security.',
+                        },
+                      },
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'Software Support & AMC Managed Maintenance',
+                          url: 'https://www.anvitechindia.com/services/software-support-amc-managed-maintenance',
+                          description: 'Annual Maintenance Contracts (AMC) and 24/7 technical support.',
                         },
                       },
                     ],
                   },
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': 'https://www.anvitechindia.com/#website',
+                  url: 'https://www.anvitechindia.com',
+                  name: 'ANVITECH INDIA PRIVATE LIMITED',
+                  description:
+                    'Best software development company near me providing custom software engineering, AI agents, ERP/CRM platforms, cloud DevOps, and cybersecurity solutions.',
+                  publisher: {
+                    '@id': 'https://www.anvitechindia.com/#organization',
+                  },
+                },
+                {
+                  '@type': 'ItemList',
+                  '@id': 'https://www.anvitechindia.com/#sitelinks',
+                  name: 'ANVITECH Core Software Services & Sitelinks',
+                  itemListElement: [
+                    {
+                      '@type': 'SiteNavigationElement',
+                      position: 1,
+                      name: 'Custom Software & Enterprise ERP Development',
+                      description: 'Tailored enterprise platforms, ERP, CRM, HRMS, and custom business workflows.',
+                      url: 'https://www.anvitechindia.com/services/custom-software-enterprise-erp-development',
+                    },
+                    {
+                      '@type': 'SiteNavigationElement',
+                      position: 2,
+                      name: 'Web & Mobile Application Engineering',
+                      description: 'Native and cross-platform applications for iOS, Android, and Web.',
+                      url: 'https://www.anvitechindia.com/services/web-mobile-application-engineering',
+                    },
+                    {
+                      '@type': 'SiteNavigationElement',
+                      position: 3,
+                      name: 'AI Solutions, Chatbots & Intelligent Automation',
+                      description: 'Intelligent AI agents, RPA, voice assistants, and predictive analytics.',
+                      url: 'https://www.anvitechindia.com/services/ai-solutions-chatbots-intelligent-automation',
+                    },
+                    {
+                      '@type': 'SiteNavigationElement',
+                      position: 4,
+                      name: 'Cloud Infrastructure, Migration & DevOps',
+                      description: 'AWS, Azure, GCP cloud migration, CI/CD pipelines, and Kubernetes.',
+                      url: 'https://www.anvitechindia.com/services/cloud-infrastructure-migration-devops',
+                    },
+                    {
+                      '@type': 'SiteNavigationElement',
+                      position: 5,
+                      name: 'Cybersecurity, Threat Monitoring & SOC',
+                      description: 'Advanced threat monitoring, vulnerability scanning, and compliance.',
+                      url: 'https://www.anvitechindia.com/services/cybersecurity-threat-monitoring-soc',
+                    },
+                    {
+                      '@type': 'SiteNavigationElement',
+                      position: 6,
+                      name: 'Software Support, AMC & Managed Maintenance',
+                      description: 'Annual Maintenance Contracts (AMC), 24/7 technical support.',
+                      url: 'https://www.anvitechindia.com/services/software-support-amc-managed-maintenance',
+                    },
+                    {
+                      '@type': 'SiteNavigationElement',
+                      position: 7,
+                      name: 'Contact Enterprise Technology Advisors',
+                      description: 'Direct contact details for ANVITECH INDIA technology advisors in Bengaluru.',
+                      url: 'https://www.anvitechindia.com/#contact',
+                    },
+                  ],
                 },
               ],
             }),
@@ -198,7 +288,9 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-brand-bg text-navy-DEFAULT antialiased selection:bg-gold-DEFAULT selection:text-navy-DEFAULT">
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -62,24 +62,10 @@ export const Contact: React.FC = () => {
                   <Mail className="w-5 h-5 text-gold-DEFAULT" />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-500 font-mono uppercase tracking-wider font-bold mb-1">Email Inquiries</div>
-                  <div className="space-y-1">
-                    <div>
-                      <a href="mailto:support@anvitechindia.com" className="text-sm font-bold text-navy-DEFAULT hover:text-gold-dark transition-colors">
-                        support@anvitechindia.com
-                      </a>
-                    </div>
-                    <div>
-                      <a href="mailto:jashwanth@anvitechindia.com" className="text-sm font-bold text-navy-DEFAULT hover:text-gold-dark transition-colors">
-                        jashwanth@anvitechindia.com
-                      </a>
-                    </div>
-                    <div>
-                      <a href="mailto:shashank@anvitechindia.com" className="text-sm font-bold text-navy-DEFAULT hover:text-gold-dark transition-colors">
-                        shashank@anvitechindia.com
-                      </a>
-                    </div>
-                  </div>
+                  <div className="text-xs text-slate-500 font-mono uppercase tracking-wider font-bold mb-1">Email Inquiry</div>
+                  <a href="mailto:support@anvitechindia.com" className="text-sm font-bold text-navy-DEFAULT hover:text-gold-dark transition-colors">
+                    support@anvitechindia.com
+                  </a>
                 </div>
               </div>
 
