@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://www.anvitechindia.com/nl.webp',
+        url: 'https://www.anvitechindia.com/llll.webp',
         width: 1200,
         height: 630,
         alt: 'ANVITECH INDIA PRIVATE LIMITED Logo',
@@ -76,16 +76,16 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ANVITECH INDIA | Best Software Development Company Near Me',
     description: 'Premier Custom Software Development, AI Solutions & Enterprise Technology Partner.',
-    images: ['https://www.anvitechindia.com/nl.webp'],
+    images: ['https://www.anvitechindia.com/llll.webp'],
   },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/nl.webp', type: 'image/webp' },
+      { url: '/llll.webp', type: 'image/webp' },
       { url: '/icon.png', type: 'image/png' },
     ],
-    shortcut: ['/favicon.ico', '/nl.webp'],
-    apple: [{ url: '/apple-touch-icon.png' }, { url: '/nl.webp' }],
+    shortcut: ['/favicon.ico', '/llll.webp'],
+    apple: [{ url: '/apple-touch-icon.png' }, { url: '/llll.webp' }],
   },
   verification: {
     google: '9A-Qhj3vyoNEImMogsdWQtMU9GOKTvHGNnblN3M4H6E',
@@ -116,11 +116,11 @@ export default function RootLayout({
       <head>
         <meta name="google-site-verification" content="9A-Qhj3vyoNEImMogsdWQtMU9GOKTvHGNnblN3M4H6E" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/nl.webp" type="image/webp" />
+        <link rel="icon" href="/llll.webp" type="image/webp" />
         <link rel="icon" href="/icon.png" type="image/png" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="apple-touch-icon" href="/nl.webp" />
+        <link rel="apple-touch-icon" href="/llll.webp" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -137,8 +137,8 @@ export default function RootLayout({
                   name: 'ANVITECH INDIA PRIVATE LIMITED',
                   alternateName: 'ANVITECH INDIA',
                   url: 'https://www.anvitechindia.com',
-                  logo: 'https://www.anvitechindia.com/nl.webp',
-                  image: 'https://www.anvitechindia.com/nl.webp',
+                  logo: 'https://www.anvitechindia.com/llll.webp',
+                  image: 'https://www.anvitechindia.com/llll.webp',
                   description:
                     'Best software development company near me providing custom software engineering, AI agents, ERP/CRM platforms, cloud DevOps, and cybersecurity solutions.',
                   address: {
