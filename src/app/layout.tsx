@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://www.anvitechindia.com/nl.webp',
+        url: 'https://www.anvitechindia.com/llll.webp',
         width: 1200,
         height: 630,
         alt: 'ANVITECH INDIA PRIVATE LIMITED Logo',
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ANVITECH INDIA | Best Software Development Company Near Me',
     description: 'Premier Custom Software Development, AI Solutions & Enterprise Technology Partner.',
-    images: ['https://www.anvitechindia.com/nl.webp'],
+    images: ['https://www.anvitechindia.com/llll.webp'],
   },
   icons: {
     icon: [
@@ -137,8 +137,8 @@ export default function RootLayout({
                   name: 'ANVITECH INDIA PRIVATE LIMITED',
                   alternateName: 'ANVITECH INDIA',
                   url: 'https://www.anvitechindia.com',
-                  logo: 'https://www.anvitechindia.com/nl.webp',
-                  image: 'https://www.anvitechindia.com/nl.webp',
+                  logo: 'https://www.anvitechindia.com/llll.webp',
+                  image: 'https://www.anvitechindia.com/llll.webp',
                   description:
                     'Best software development company near me providing custom software engineering, AI agents, ERP/CRM platforms, cloud DevOps, and cybersecurity solutions.',
                   address: {
