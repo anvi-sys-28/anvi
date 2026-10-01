@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import TechText from './TechText';
 
 interface HeroProps {
   onExploreSolutions?: () => void;
@@ -113,26 +114,47 @@ export const Hero: React.FC<HeroProps> = ({ onExploreSolutions, onTalkToTeam }) 
         {/* Bottom Row: ANVITECH Headline + INDIA Pvt. Ltd. (Same Line/Font/Color) Left + Paragraph Right */}
         <div className="shrink-0 grid grid-cols-1 lg:grid-cols-12 gap-4 items-end pt-3 sm:pt-4 pb-2 border-t border-white/[0.08]">
           
-          {/* Bottom Left: ANVITECH + INDIA Pvt. Ltd. with Smooth Reveal Animation */}
-          <div className="lg:col-span-7 flex flex-col justify-end">
-            <h1 className="flex items-baseline flex-wrap gap-x-4 gap-y-1">
-              <motion.span
+          {/* Bottom Left: ANVITECH (TechText) + INDIA Pvt. Ltd. */}
+          <div className="lg:col-span-7 flex flex-col justify-end pb-1">
+            <div className="flex flex-col items-start w-full">
+              <motion.div
                 initial={{ opacity: 0, y: 35 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.0, delay: 0.4, ease: easeCurve }}
-                className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[9rem] font-black tracking-tight leading-none text-white font-heading uppercase select-none drop-shadow-2xl inline-block"
+                className="w-full h-[55px] xs:h-[75px] sm:h-[100px] md:h-[125px] lg:h-[145px] xl:h-[165px] 2xl:h-[190px] relative"
               >
-                Anvitech
-              </motion.span>
-              <motion.span
+                <TechText
+                  text="ANVITECH"
+                  fontFamily='"Plus Jakarta Sans", sans-serif'
+                  fontWeight={800}
+                  fontSize={240}
+                  letterSpacing={-0.04}
+                  color="#ffffff"
+                  accentColor="#D9A441"
+                  reveal="letter"
+                  reach={180}
+                  softness={0.7}
+                  dashLength={4}
+                  dashGap={2}
+                  lineStyle="dashed"
+                  strokeWidth={1.5}
+                  specks={8}
+                  selection={true}
+                  labels={true}
+                  draggable={false}
+                  sweep={true}
+                  speed={0.6}
+                />
+              </motion.div>
+              <motion.div
                 initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.85, delay: 0.65, ease: easeCurve }}
-                className="text-sm sm:text-lg md:text-xl lg:text-2xl font-black font-heading text-white tracking-widest uppercase select-none opacity-95 inline-block"
+                className="text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl font-black font-heading text-white tracking-widest uppercase select-none opacity-95 inline-block pt-1 sm:pt-2 pl-2.5 sm:pl-3 md:pl-3.5 lg:pl-4 xl:pl-4.5"
               >
                 INDIA Pvt. Ltd.
-              </motion.span>
-            </h1>
+              </motion.div>
+            </div>
           </div>
 
           {/* Bottom Right: Paragraph text with Smooth Fade-Up */}
