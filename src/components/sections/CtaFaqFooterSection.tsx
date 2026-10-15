@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
 import { useTheme } from '@/context/ThemeContext';
+import HalftoneWordmarkFooter, { FooterColumn } from '@/components/ui/halftone-wordmark-footer';
 
 interface FaqItem {
   question: string;
@@ -35,6 +36,38 @@ const faqData: FaqItem[] = [
     question: 'What technology stack does ANVITECH INDIA specialize in?',
     answer:
       'We build using modern enterprise technologies across Web (React, Next.js, TypeScript), Mobile (iOS, Android, React Native), Backend (Node.js, Python), Cloud (AWS, Azure, GCP, Docker, Kubernetes), and Databases (PostgreSQL, MongoDB).',
+  },
+];
+
+const footerColumns: FooterColumn[] = [
+  {
+    title: 'Services',
+    links: [
+      { label: 'Custom Software', href: '/services/custom-software-enterprise-erp-development' },
+      { label: 'AI Solutions & Agents', href: '/services/ai-solutions-chatbots-intelligent-automation' },
+      { label: 'ERP & CRM Systems', href: '/services/custom-software-enterprise-erp-development' },
+      { label: 'Logistics Software', href: '/services' },
+      { label: 'Cloud & DevOps', href: '/services/cloud-infrastructure-migration-devops' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About Us', href: '/#about' },
+      { label: 'Methodology', href: '/#about' },
+      { label: 'Industries', href: '/#industries' },
+      { label: 'Tech Stack', href: '/#tech-stack' },
+      { label: 'Contact Us', href: '/#contact' },
+    ],
+  },
+  {
+    title: 'Enterprise',
+    links: [
+      { label: 'support@anvitechindia.com', href: 'mailto:support@anvitechindia.com' },
+      { label: 'Bengaluru, India', href: '/#contact' },
+      { label: 'Privacy Policy', href: '#privacy' },
+      { label: 'Terms of Service', href: '#terms' },
+    ],
   },
 ];
 
@@ -140,130 +173,24 @@ export const CtaFaqFooterSection: React.FC = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className={`pt-20 pb-5 max-[900px]:pt-[60px] border-t transition-colors ${
-        isDark ? 'bg-neutral-950 border-neutral-800 text-slate-300' : 'bg-[#fafafa] border-[#f0f0f0] text-neutral-900'
-      }`}>
-        <div className="max-w-[1100px] w-full mx-auto px-5">
-          <div className="grid grid-cols-[2fr_1fr_1fr_2fr] gap-10 mb-[50px] max-[900px]:grid-cols-2 max-[480px]:grid-cols-1">
-            {/* 1. Logo column */}
-            <div>
-              <div className="mb-[15px]">
-                <Logo variant={isDark ? 'dark' : 'light'} size="sm" />
-              </div>
-              <p className={`text-[0.85rem] leading-[1.6] max-w-[240px] ${
-                isDark ? 'text-slate-400' : 'text-[#666]'
-              }`}>
-                ANVITECH INDIA PRIVATE LIMITED builds and manages technology that helps businesses operate, automate and grow.
-              </p>
-            </div>
-
-            {/* 2. Services Navigation */}
-            <div>
-              <h4 className={`font-semibold mb-5 text-[0.95rem] ${
-                isDark ? 'text-white' : 'text-neutral-900'
-              }`}>
-                Services
-              </h4>
-              <ul>
-                {['Custom Software', 'AI Solutions & Agents', 'ERP & CRM Systems', 'Logistics Software', 'Cloud & DevOps'].map(
-                  (linkText, idx) => (
-                    <li key={idx} className="mb-3">
-                      <a
-                        href="#services"
-                        className={`no-underline text-[0.85rem] transition-colors duration-200 ${
-                          isDark ? 'text-slate-400 hover:text-white' : 'text-[#888] hover:text-neutral-900'
-                        }`}
-                      >
-                        {linkText}
-                      </a>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            {/* 3. Company Navigation */}
-            <div>
-              <h4 className={`font-semibold mb-5 text-[0.95rem] ${
-                isDark ? 'text-white' : 'text-neutral-900'
-              }`}>
-                Company
-              </h4>
-              <ul>
-                {['About Us', 'Methodology', 'Industries', 'Technology Stack', 'Contact Us'].map((pageText, idx) => (
-                  <li key={idx} className="mb-3">
-                    <a
-                      href="#home"
-                      className={`no-underline text-[0.85rem] transition-colors duration-200 ${
-                        isDark ? 'text-slate-400 hover:text-white' : 'text-[#888] hover:text-neutral-900'
-                      }`}
-                    >
-                      {pageText}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* 4. Contact & Newsletter */}
-            <div>
-              <h4 className={`font-semibold mb-5 text-[0.95rem] ${
-                isDark ? 'text-white' : 'text-neutral-900'
-              }`}>
-                Enterprise Contact
-              </h4>
-              <p className={`text-[0.85rem] mb-[15px] space-y-1 ${
-                isDark ? 'text-slate-400' : 'text-[#666]'
-              }`}>
-                <div>Bengaluru, India | support@anvitechindia.com</div>
-              </p>
-              <div className="flex gap-[10px]">
-                <input
-                  type="email"
-                  placeholder="Enter work email..."
-                  className={`flex-grow border outline-none transition-colors duration-200 text-[0.9rem] ${
-                    isDark
-                      ? 'bg-neutral-900 border-neutral-800 text-white placeholder:text-neutral-500 focus:border-neutral-600'
-                      : 'bg-white border-[#f0f0f0] text-neutral-900 placeholder:text-neutral-400 focus:border-[#ccc]'
-                  }`}
-                  style={{
-                    padding: '12px 16px',
-                    borderRadius: '10px',
-                    boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.02)',
-                  }}
-                />
-                <button
-                  type="button"
-                  className={`border-none font-semibold cursor-pointer transition-all duration-200 hover:-translate-y-0.5 text-[0.9rem] ${
-                    isDark ? 'bg-white text-black hover:bg-slate-200' : 'bg-neutral-900 text-white hover:bg-black'
-                  }`}
-                  style={{
-                    padding: '12px 24px',
-                    borderRadius: '10px',
-                    boxShadow: '0 12px 24px rgba(0,0,0,0.3)',
-                  }}
-                >
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom bar */}
-          <div className={`border-t pt-[25px] pb-[10px] flex justify-between text-[0.85rem] max-[480px]:flex-col max-[480px]:gap-[15px] max-[480px]:items-center ${
-            isDark ? 'border-neutral-800 text-slate-500' : 'border-[#f0f0f0] text-[#888]'
-          }`}>
-            <div>
-              &copy; {new Date().getFullYear()} ANVITECH INDIA PRIVATE LIMITED. All rights reserved.
-            </div>
-            <div className="flex gap-5">
-              <a href="#privacy" className={`hover:underline ${isDark ? 'hover:text-slate-300' : 'hover:text-neutral-900'}`}>Privacy Policy</a>
-              <a href="#terms" className={`hover:underline ${isDark ? 'hover:text-slate-300' : 'hover:text-neutral-900'}`}>Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {/* Halftone Wordmark Footer */}
+      <HalftoneWordmarkFooter
+        wordmark="ANVI GROUPS"
+        label="ANVITECH INDIA"
+        meta="©2026 · Bengaluru, India"
+        columns={footerColumns}
+        preset={isDark ? "night" : "paper"}
+        palette={
+          isDark
+            ? { background: "#060D17", ink: "#E2E8F0", warm: "#D9A441" }
+            : { background: "#F7F8FA", ink: "#0F172A", warm: "#C89B3C" }
+        }
+        fontFamily="'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif"
+        fontWeight={800}
+        crop={0}
+        height="410px"
+        backToTop={true}
+      />
     </div>
   );
 };
